@@ -3,266 +3,201 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>El Crucero</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat&display=swap" rel="stylesheet">
+<title>El Crucero - Menú</title>
 
 <style>
-
 body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: #f5e9dc;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff8f0;
 }
 
 /* HEADER */
 .header {
-  position: relative;
-  height: 300px;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
 }
 
 .header video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(60,20,20,0.3);
-}
-
+/* LOGO arriba izquierda */
 .logo {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 100px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 90px;
 }
 
+/* TEXTO abajo sobre video */
 .slogan {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-  font-size: 14px;
-  color: black;
-  background: rgba(255,255,255,0.6);
-  padding: 5px 0;
-  letter-spacing: 1px;
-  font-family: 'Playfair Display', serif;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    background: rgba(255,255,255,0.6);
 }
 
 /* BOTONES */
-.menu-nav {
-  display: flex;
-  overflow-x: auto;
-  gap: 10px;
-  padding: 10px;
-  background: white;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+.botones {
+    text-align: center;
+    padding: 20px;
 }
 
-.menu-nav a {
-  background: #7a1f1f;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 20px;
-  text-decoration: none;
-  white-space: nowrap;
+.botones button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    background: #a52a2a;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botones button:hover {
+    background: #7a1f1f;
 }
 
 /* SECCIONES */
-.section {
-  padding: 20px;
+.seccion {
+    padding: 20px;
+}
+
+.seccion img {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 h2 {
-  font-family: 'Playfair Display', serif;
-  text-align: center;
-  color: #7a1f1f;
+    border-bottom: 2px dotted #a52a2a;
+    padding-bottom: 5px;
 }
-
-.section h2::after {
-  content: "";
-  width: 60px;
-  height: 3px;
-  background: #c59d5f;
-  display: block;
-  margin: 8px auto;
-}
-
-/* TARJETAS */
-.card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 20px;
-
-  border: 3px solid transparent;
-  border-image: repeating-linear-gradient(
-    45deg,
-    #0f4c5c,
-    #0f4c5c 10px,
-    #e36414 10px,
-    #e36414 20px,
-    #fb8b24 20px,
-    #fb8b24 30px
-  ) 1;
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius:10px;
-  margin-bottom:10px;
-}
-
-.card p {
-  margin: 5px 0;
-  padding-left: 15px;
-  position: relative;
-}
-
-.card p::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #b22222;
-}
-
-strong {
-  color: #7a1f1f;
-}
-
 </style>
+
+<script>
+function mostrarSeccion(id) {
+    let secciones = document.querySelectorAll('.seccion');
+    secciones.forEach(sec => sec.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+</script>
 </head>
 
 <body>
 
 <!-- HEADER -->
 <div class="header">
-  <video autoplay muted loop playsinline>
-    <source src="header.mp4" type="video/mp4">
-  </video>
-
-  <div class="overlay">
+    <video autoplay muted loop>
+        <source src="header.mp4" type="video/mp4">
+    </video>
     <img src="logo.png" class="logo">
     <div class="slogan">Tradición desde 1994</div>
-  </div>
 </div>
 
 <!-- BOTONES -->
-<div class="menu-nav">
-  <a href="#caldos">Caldos</a>
-  <a href="#pancita">Pancita</a>
-  <a href="#chilaquiles">Chilaquiles</a>
-  <a href="#enchiladas">Enchiladas</a>
-  <a href="#asados">Asados</a>
-  <a href="#tacos">Tacos</a>
-  <a href="#extras">Extras</a>
-  <a href="#bebidas">Bebidas</a>
-  <a href="#postres">Postres</a>
+<div class="botones">
+    <button onclick="mostrarSeccion('caldos')">Caldos</button>
+    <button onclick="mostrarSeccion('pancita')">Pancita</button>
+    <button onclick="mostrarSeccion('chilaquiles')">Chilaquiles</button>
+    <button onclick="mostrarSeccion('enchiladas')">Enchiladas</button>
+    <button onclick="mostrarSeccion('asados')">Asados</button>
+    <button onclick="mostrarSeccion('tacos')">Tacos</button>
+    <button onclick="mostrarSeccion('extras')">Extras</button>
+    <button onclick="mostrarSeccion('bebidas')">Bebidas</button>
+    <button onclick="mostrarSeccion('postres')">Postres</button>
 </div>
 
 <!-- CALDOS -->
-<div id="caldos" class="section">
+<div id="caldos" class="seccion">
 <h2>Caldo de Gallina</h2>
-<div class="card">
 <img src="caldo.jpg">
-<p><strong>Chico:</strong> $45</p>
-<p><strong>Grande:</strong> $50</p>
-</div>
+<p>Caldo chico $45 | Grande $50</p>
+<p>Pechuga entera $220 | 1/2 $110 | 1/4 $88</p>
+<p>Pierna $88 | Muslo $88 | Rabadilla $88</p>
+<p>Huacal $84 | Alones $72</p>
+<p>Patas $88 | Mollejas $88 | Cabeza $75</p>
 </div>
 
 <!-- PANCITA -->
-<div id="pancita" class="section">
-<h2>Pancita</h2>
-<div class="card">
+<div id="pancita" class="seccion" style="display:none;">
+<h2>Pancita (Fin de semana)</h2>
 <img src="pancita.jpg">
-<p>Grande: $127</p>
-<p>Chica: $120</p>
-</div>
+<p>Grande $127 | Chica $120</p>
 </div>
 
 <!-- CHILAQUILES -->
-<div id="chilaquiles" class="section">
+<div id="chilaquiles" class="seccion" style="display:none;">
 <h2>Chilaquiles</h2>
-<div class="card">
 <img src="chilaquiles.jpg">
-<p>Desde $90 hasta $170</p>
-</div>
+<p>Agua norteña $130 | Arrachera $170</p>
+<p>Gallina $125 | Costilla $130</p>
+<p>Pechuga asada o empanizada $130</p>
+<p>Huevo $120 | Sencillos $90</p>
 </div>
 
 <!-- ENCHILADAS -->
-<div id="enchiladas" class="section">
+<div id="enchiladas" class="seccion" style="display:none;">
 <h2>Enchiladas</h2>
-<div class="card">
 <img src="enchiladas.jpg">
-<p>Desde $90 hasta $185</p>
-</div>
+<p>Verdes/Mole desde $90 hasta $170</p>
+<p>Suizas desde $90 hasta $185</p>
 </div>
 
 <!-- ASADOS -->
-<div id="asados" class="section">
+<div id="asados" class="seccion" style="display:none;">
 <h2>Asados</h2>
-<div class="card">
 <img src="asados.jpg">
-<p>Desde $135 hasta $170</p>
-</div>
+<p>Arrachera $170 | Pechuga $135</p>
+<p>Costilla $135 | Bistec $135</p>
+<p>Empanizada $135 | Aguja norteña $135</p>
 </div>
 
 <!-- TACOS -->
-<div id="tacos" class="section">
+<div id="tacos" class="seccion" style="display:none;">
 <h2>Tacos</h2>
-<div class="card">
 <img src="tacos.jpg">
-<p>$50 c/u</p>
-</div>
+<p>Todos $50</p>
+<p>Tacos dorados $115</p>
 </div>
 
 <!-- EXTRAS -->
-<div id="extras" class="section">
+<div id="extras" class="seccion" style="display:none;">
 <h2>Extras</h2>
-
-<div class="card">
 <img src="hamburguesa.jpg">
-<p>Hamburguesa con papas: $120</p>
-</div>
+<p>Hamburguesa con papas $120</p>
 
-<div class="card">
 <img src="chiquipeques.jpg">
-<p>Tiritas, nuggets o queso: $95</p>
-</div>
-
+<p>Tiritas, nuggets, dedos de queso $95</p>
 </div>
 
 <!-- BEBIDAS -->
-<div id="bebidas" class="section">
+<div id="bebidas" class="seccion" style="display:none;">
 <h2>Bebidas</h2>
-<div class="card">
 <img src="bebidas.jpg">
-<p>Desde $30 a $56</p>
-</div>
+<p>Limonada/Naranjada $45</p>
+<p>Aguas $37 / $56</p>
+<p>Refrescos, cerveza $45</p>
+<p>Café y té $30</p>
 </div>
 
 <!-- POSTRES -->
-<div id="postres" class="section">
+<div id="postres" class="seccion" style="display:none;">
 <h2>Postres</h2>
 
-<div class="card">
-<img src="helados.jpg">
-<p>Helados: $45</p>
-</div>
-
-<div class="card">
 <img src="postres.jpg">
-<p>Pasteles: $72 | Panqués: $38</p>
-</div>
+<p>Pasteles $72 | Panqués $38</p>
+
+<img src="helados.jpg">
+<p>Helados ARCE $45</p>
 
 </div>
 

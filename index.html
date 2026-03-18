@@ -18,20 +18,17 @@ body {
     height: 300px;
     overflow: hidden;
 }
-
 .header video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 .logo {
     position: absolute;
     top: 15px;
     left: 15px;
     width: 90px;
 }
-
 .slogan {
     position: absolute;
     bottom: 10px;
@@ -46,7 +43,6 @@ body {
     text-align: center;
     padding: 25px;
 }
-
 .botones button {
     margin: 5px;
     padding: 10px 15px;
@@ -61,7 +57,6 @@ body {
     padding: 25px;
     display: none;
 }
-
 .seccion img {
     width: 100%;
     max-width: 300px;
@@ -74,7 +69,6 @@ body {
     transform: translateY(20px);
     transition: 0.6s ease;
 }
-
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
@@ -88,7 +82,10 @@ h2 {
 <script>
 function mostrarSeccion(id) {
     let secciones = document.querySelectorAll('.seccion');
-    secciones.forEach(sec => sec.style.display = 'none');
+    secciones.forEach(sec => {
+        sec.style.display = 'none';
+        sec.classList.remove('visible');
+    });
 
     let activa = document.getElementById(id);
     activa.style.display = 'block';
@@ -99,22 +96,25 @@ function mostrarSeccion(id) {
 }
 
 window.onload = () => {
-    document.getElementById('caldos').style.display = 'block';
-    document.getElementById('caldos').classList.add('visible');
+    let primera = document.getElementById('caldos');
+    primera.style.display = 'block';
+    primera.classList.add('visible');
 };
 </script>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <div class="header">
-<video autoplay muted loop>
-<source src="header.mp4">
-</video>
-<img src="logo.png" class="logo">
-<div class="slogan">Tradición desde 1994</div>
+    <video autoplay muted loop>
+        <source src="header.mp4">
+    </video>
+    <img src="logo.png" class="logo">
+    <div class="slogan">Tradición desde 1994</div>
 </div>
 
+<!-- BOTONES -->
 <div class="botones">
 <button onclick="mostrarSeccion('caldos')">Caldos</button>
 <button onclick="mostrarSeccion('pancita')">Pancita</button>
@@ -131,32 +131,41 @@ window.onload = () => {
 <div id="caldos" class="seccion fade-in">
 <h2>Caldo de Gallina</h2>
 <img src="caldo.jpg">
-<p>Caldo chico $45 | Grande $50</p>
-<p>Pechuga entera $220 | 1/2 $110 | 1/4 $88</p>
-<p>Pierna $88 | Muslo $88 | Rabadilla $88</p>
-<p>Huacal $84 | Alones $72</p>
-<p>Patas $88 | Mollejas $88 | Cabeza $75</p>
+<p>Caldo solo chico: $45</p>
+<p>Caldo solo grande: $50</p>
+<p>Pechuga entera: $220</p>
+<p>Pechuga 1/2: $110</p>
+<p>Pechuga 1/4: $88</p>
+<p>Pierna: $88</p>
+<p>Muslo: $88</p>
+<p>Rabadilla: $88</p>
+<p>Huacal: $84</p>
+<p>Alones: $72</p>
+<p>Orden de patas: $88</p>
+<p>Orden de mollejas: $88</p>
+<p>Orden de cabezas: $75 (según disponibilidad)</p>
 </div>
 
 <!-- PANCITA -->
 <div id="pancita" class="seccion fade-in">
-<h2>Pancita</h2>
+<h2>Pancita (Fin de semana)</h2>
 <img src="pancita.jpg">
-<p>Grande $127 | Chica $120</p>
+<p>Pancita grande: $127</p>
+<p>Pancita chica: $120 (según disponibilidad)</p>
 </div>
 
 <!-- CHILAQUILES -->
 <div id="chilaquiles" class="seccion fade-in">
 <h2>Chilaquiles</h2>
 <img src="chilaquiles.jpg">
-<p>Agua norteña $130</p>
-<p>Arrachera $170</p>
-<p>Gallina $125</p>
-<p>Costilla $130</p>
-<p>Pechuga asada $130</p>
-<p>Pechuga empanizada $130</p>
-<p>Huevo $120</p>
-<p>Sencillos $90</p>
+<p>Agua norteña: $130</p>
+<p>Arrachera: $170</p>
+<p>Carne de gallina: $125</p>
+<p>Costilla (con o sin hueso): $130</p>
+<p>Pechuga asada: $130</p>
+<p>Pechuga empanizada: $130</p>
+<p>Huevo: $120</p>
+<p>Sencillos: $90</p>
 </div>
 
 <!-- ENCHILADAS -->
@@ -165,41 +174,46 @@ window.onload = () => {
 <img src="enchiladas.jpg">
 
 <p><b>Verde y Mole</b></p>
-<p>Arrachera $170</p>
-<p>Gallina $125</p>
-<p>Costilla $130</p>
-<p>Pechuga asada $130</p>
-<p>Pechuga empanizada $130</p>
-<p>Huevo $120</p>
-<p>Sencillas $90</p>
+<p>Arrachera: $170</p>
+<p>Carne de gallina: $125</p>
+<p>Costilla (con o sin hueso): $130</p>
+<p>Pechuga asada: $130</p>
+<p>Pechuga empanizada: $130</p>
+<p>Huevo: $120</p>
+<p>Sencillas: $90</p>
 
 <p><b>Suizas</b></p>
-<p>Arrachera $185</p>
-<p>Gallina $145</p>
-<p>Costilla $160</p>
-<p>Pechuga asada $160</p>
-<p>Pechuga empanizada $160</p>
-<p>Sencillas $90</p>
+<p>Arrachera: $185</p>
+<p>Carne de gallina: $145</p>
+<p>Costilla (con o sin hueso): $160</p>
+<p>Pechuga asada: $160</p>
+<p>Pechuga empanizada: $160</p>
+<p>Sencillas: $90</p>
 </div>
 
 <!-- ASADOS -->
 <div id="asados" class="seccion fade-in">
 <h2>Asados</h2>
 <img src="asados.jpg">
-<p>Arrachera $170</p>
-<p>Pechuga $135</p>
-<p>Costilla $135</p>
-<p>Bistec $135</p>
-<p>Empanizada $135</p>
-<p>Aguja norteña $135</p>
+<p>Arrachera: $170</p>
+<p>Pechuga: $135</p>
+<p>Costilla (con o sin hueso): $135</p>
+<p>Bistec: $135</p>
+<p>Pechuga empanizada: $135</p>
+<p>Aguja norteña: $135</p>
 </div>
 
 <!-- TACOS -->
 <div id="tacos" class="seccion fade-in">
 <h2>Tacos</h2>
 <img src="tacos.jpg">
-<p>Todos $50</p>
-<p>Tacos dorados $115</p>
+<p>Arrachera: $50</p>
+<p>Pechuga asada: $50</p>
+<p>Costilla asada: $50</p>
+<p>Bistec asado: $50</p>
+<p>Pechuga empanizada: $50</p>
+<p>Aguja norteña: $50</p>
+<p>Tacos dorados: $115</p>
 </div>
 
 <!-- EXTRAS -->
@@ -207,24 +221,34 @@ window.onload = () => {
 <h2>Extras</h2>
 
 <img src="hamburguesa.jpg">
-<p>Hamburguesa con papas $120</p>
+<p>Hamburguesas con papas: $95</p>
 
 <img src="chiquipeques.jpg">
-<p>Tiritas $95 | Nuggets $95 | Deditos $95</p>
-<p>Incluye papas y ensalada</p>
+<p>Tiritas de pollo: $95</p>
+<p>Deditos de queso: $95</p>
+<p>Nuggets: $95</p>
+<p>Incluye guarnición, papas y ensalada</p>
 </div>
 
 <!-- BEBIDAS -->
 <div id="bebidas" class="seccion fade-in">
 <h2>Bebidas</h2>
 <img src="bebidas.jpg">
-<p>Limonada $45 | Naranjada $45</p>
-<p>Horchata $37 / $56</p>
-<p>Jamaica $37 / $56</p>
-<p>Sangría $45</p>
-<p>Refrescos $45 | Cervezas $45</p>
-<p>Agua $30</p>
-<p>Café y té $30</p>
+
+<p><b>Bebidas Frías</b></p>
+<p>Limonada: $45</p>
+<p>Naranjada: $45</p>
+<p>Agua de horchata: $37 (1/2 litro) $56 (litro)</p>
+<p>Agua de Jamaica: $37 (1/2 litro) $56 (litro)</p>
+<p>Sangría preparada: $45</p>
+<p>Agua mineral: $30</p>
+<p>Agua embotellada: $30</p>
+<p>Refrescos: $45</p>
+<p>Cervezas: $45</p>
+
+<p><b>Bebidas Calientes</b></p>
+<p>Café de olla: $30</p>
+<p>Té (diversos sabores): $30</p>
 </div>
 
 <!-- POSTRES -->
@@ -232,15 +256,27 @@ window.onload = () => {
 <h2>Postres</h2>
 
 <img src="helados.jpg">
-<p>Helados ARCE $45</p>
-<p>Sabores varios</p>
+<p><b>Helados ARCE – $45 c/u</b></p>
+<p>Fresas con crema</p>
+<p>Piña</p>
+<p>Manzana</p>
+<p>Mango</p>
+<p>Mamey</p>
+<p>Naranja</p>
+<p>Limón</p>
+<p>Coco</p>
+<p>Queso con zarzamora</p>
 
 <img src="postres.jpg">
-<p>Pasteles $72</p>
-<p>Matilda | Tortuga | Zanahoria | Frambuesa</p>
+<p><b>Pasteles – $72 c/u</b></p>
+<p>Matilda</p>
+<p>Tortuga</p>
+<p>Zanahoria</p>
+<p>Frambuesa</p>
 
-<p>Panqués $38</p>
-<p>Chocolate | Frutos rojos</p>
+<p><b>Panqués – $38 c/u</b></p>
+<p>Chocolate</p>
+<p>Frutos rojos</p>
 </div>
 
 </body>

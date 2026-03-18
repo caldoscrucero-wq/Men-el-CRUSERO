@@ -30,27 +30,27 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(60,20,20,0.3);
+  top:0;
+  left:0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  background: rgba(60,20,20,0.2);
 }
 
 .logo {
-  position: absolute;
-  top: 15px;
-  left: 15px;
   width: 100px;
 }
 
 .slogan {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
   text-align: center;
-  font-size: 14px;
-  color: black;
-  background: rgba(255,255,255,0.6);
-  padding: 5px 0;
-  letter-spacing: 1px;
+  font-size: 18px;
+  color: #fff;
   font-family: 'Playfair Display', serif;
+  background: rgba(0,0,0,0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 /* BOTONES */
@@ -77,6 +77,7 @@ body {
 /* SECCIONES */
 .section {
   padding: 20px;
+  margin: 20px 0;
 }
 
 h2 {
@@ -94,47 +95,29 @@ h2 {
   margin: 8px auto;
 }
 
+h3 {
+  text-align: center;
+  color: #7a1f1f;
+  margin-top: 15px;
+}
+
 /* TARJETAS */
 .card {
   background: #fff;
   border-radius: 10px;
-  padding: 15px;
+  padding: 10px;
   margin-bottom: 20px;
-  border: 3px solid transparent;
-  border-image: repeating-linear-gradient(
-    45deg,
-    #0f4c5c,
-    #0f4c5c 10px,
-    #e36414 10px,
-    #e36414 20px,
-    #fb8b24 20px,
-    #fb8b24 30px
-  ) 1;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
 }
 
 .card img {
   width: 100%;
-  height: 200px;
+  max-height: 200px;
   object-fit: cover;
-  border-radius:10px;
+  border-radius: 10px;
+  border: 3px solid #7a1f1f;
   margin-bottom:10px;
-}
-
-.card p {
-  margin: 5px 0;
-  padding-left: 15px;
-  position: relative;
-}
-
-.card p::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #b22222;
-}
-
-strong {
-  color: #7a1f1f;
 }
 
 /* LISTAS CON VIÑETAS */
@@ -144,18 +127,18 @@ ul.menu-list {
   margin-bottom: 20px;
 }
 
-/* DOS COLUMNAS PARA LISTAS LARGAS (HELADOS) */
 ul.menu-list.dos-columnas {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 5px;
 }
 
-/* POSTRES TARJETAS MULTIPLES */
+/* POSTRES */
 .postres-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
+  justify-content: center;
 }
 
 .postre {
@@ -170,11 +153,11 @@ ul.menu-list.dos-columnas {
 .postre img {
   width: 100%;
   border-radius: 10px;
+  border: 2px solid #7a1f1f;
   margin-bottom: 5px;
 }
 </style>
 </head>
-
 <body>
 
 <!-- HEADER -->
@@ -204,11 +187,13 @@ ul.menu-list.dos-columnas {
 <!-- CALDOS -->
 <div id="caldos" class="section">
 <h2>Caldo de Gallina</h2>
+<div class="card">
+<img src="caldo.jpg" alt="Caldo de Gallina">
 <ul class="menu-list">
   <li>Caldo solo chico: $45</li>
   <li>Caldo solo grande: $50</li>
 </ul>
-<h3>Piezas:</h3>
+<h3>Piezas</h3>
 <ul class="menu-list">
   <li>Pechuga entera: $220</li>
   <li>Pechuga 1/2: $110</li>
@@ -219,27 +204,32 @@ ul.menu-list.dos-columnas {
   <li>Huacal: $84</li>
   <li>Alones: $72</li>
 </ul>
-<h3>Orden (según disponibilidad):</h3>
+<h3>Orden (según disponibilidad)</h3>
 <ul class="menu-list">
   <li>Patas: $88</li>
   <li>Mollejas: $88</li>
   <li>Cabezas: $75</li>
 </ul>
 </div>
+</div>
 
 <!-- PANCITA -->
 <div id="pancita" class="section">
 <h2>Pancita de res</h2>
-<p>(De viernes a lunes y días festivos)</p>
+<div class="card">
+<img src="pancita.jpg" alt="Pancita de res">
 <ul class="menu-list">
   <li>Grande: $127</li>
   <li>Chica: $120</li>
 </ul>
 </div>
+</div>
 
 <!-- CHILAQUILES -->
 <div id="chilaquiles" class="section">
 <h2>Chilaquiles</h2>
+<div class="card">
+<img src="chilaquiles.jpg" alt="Chilaquiles">
 <ul class="menu-list">
   <li>Aguja norteña: $130</li>
   <li>Arrachera: $170</li>
@@ -251,10 +241,13 @@ ul.menu-list.dos-columnas {
   <li>Sencillos: $90</li>
 </ul>
 </div>
+</div>
 
 <!-- ENCHILADAS -->
 <div id="enchiladas" class="section">
 <h2>Enchiladas</h2>
+<div class="card">
+<img src="enchiladas.jpg" alt="Enchiladas">
 <h3>Verde, Rojas y Mole</h3>
 <ul class="menu-list">
   <li>Arrachera: $170</li>
@@ -265,7 +258,7 @@ ul.menu-list.dos-columnas {
   <li>Huevo: $120</li>
   <li>Sencillas: $90</li>
 </ul>
-<h3>Enchiladas Suizas</h3>
+<h3>Suizas</h3>
 <ul class="menu-list">
   <li>Arrachera: $185</li>
   <li>Carne de gallina: $145</li>
@@ -275,10 +268,13 @@ ul.menu-list.dos-columnas {
   <li>Sencillas: $90</li>
 </ul>
 </div>
+</div>
 
 <!-- ASADOS -->
 <div id="asados" class="section">
 <h2>Asados</h2>
+<div class="card">
+<img src="asados.jpg" alt="Asados">
 <ul class="menu-list">
   <li>Arrachera: $170</li>
   <li>Pechuga: $135</li>
@@ -288,10 +284,13 @@ ul.menu-list.dos-columnas {
   <li>Aguja norteña: $135</li>
 </ul>
 </div>
+</div>
 
 <!-- TACOS -->
 <div id="tacos" class="section">
 <h2>Tacos</h2>
+<div class="card">
+<img src="tacos.jpg" alt="Tacos">
 <ul class="menu-list">
   <li>Arrachera: $50</li>
   <li>Pechuga asada: $50</li>
@@ -302,10 +301,13 @@ ul.menu-list.dos-columnas {
   <li>Tacos dorados: $115</li>
 </ul>
 </div>
+</div>
 
 <!-- MENÚ INFANTIL -->
 <div id="menu-infantil" class="section">
 <h2>Menú Infantil</h2>
+<div class="card">
+<img src="hamburguesa.jpg" alt="Hamburguesa infantil">
 <ul class="menu-list">
   <li>Tiritas de pollo: $95</li>
   <li>Deditos de queso mozzarella: $95</li>
@@ -313,11 +315,14 @@ ul.menu-list.dos-columnas {
   <li>Hamburguesas con papas: $95</li>
 </ul>
 </div>
+</div>
 
 <!-- BEBIDAS -->
 <div id="bebidas" class="section">
 <h2>Bebidas</h2>
-<h3>Bebidas Frías</h3>
+<div class="card">
+<img src="bebidas.jpg" alt="Bebidas">
+<h3>Frías</h3>
 <ul class="menu-list">
   <li>Limonada: $45</li>
   <li>Naranjada: $45</li>
@@ -330,19 +335,19 @@ ul.menu-list.dos-columnas {
   <li>Cerveza sencilla: $50</li>
   <li>Cerveza preparada: $57 (escarchado de chamoy, con clamato, limón y salsa cubana)</li>
 </ul>
-
-<h3>Bebidas Calientes</h3>
+<h3>Calientes</h3>
 <ul class="menu-list">
   <li>Café de olla: $30</li>
   <li>Té (diversos sabores): $30</li>
 </ul>
+</div>
 </div>
 
 <!-- POSTRES -->
 <div id="postres" class="section">
 <h2>Postres</h2>
 
-<!-- HELADOS A DOS COLUMNAS -->
+<h3>Helados ARCE – $45 c/u</h3>
 <ul class="menu-list dos-columnas">
   <li>Fresas con crema</li>
   <li>Piña</li>
@@ -358,40 +363,40 @@ ul.menu-list.dos-columnas {
   <li>Chongos zamoranos</li>
 </ul>
 
-<!-- POSTRES CON TARJETAS MULTIPLES -->
+<h3>Pasteles – $72 / Panqués – $38</h3>
 <div class="postres-container">
   <div class="postre">
     <img src="pastel-matilda.jpg" alt="Pastel Matilda">
-    <p>Pastel Matilda - $72</p>
+    <p>Matilda - $72</p>
   </div>
   <div class="postre">
     <img src="pastel-tortuga.jpg" alt="Pastel Tortuga">
-    <p>Pastel Tortuga - $72</p>
+    <p>Tortuga - $72</p>
   </div>
   <div class="postre">
     <img src="pastel-zanahoria.jpg" alt="Pastel Zanahoria">
-    <p>Pastel Zanahoria - $72</p>
+    <p>Zanahoria - $72</p>
   </div>
   <div class="postre">
     <img src="pastel-frambuesa.jpg" alt="Pastel Frambuesa">
-    <p>Pastel Frambuesa - $72</p>
+    <p>Frambuesa - $72</p>
   </div>
   <div class="postre">
     <img src="panque-chocolate.jpg" alt="Panqué Chocolate">
-    <p>Panqué Chocolate - $38</p>
+    <p>Chocolate - $38</p>
   </div>
   <div class="postre">
     <img src="panque-frutos-rojos.jpg" alt="Panqué Frutos Rojos">
-    <p>Panqué Frutos Rojos - $38</p>
+    <p>Frutos Rojos - $38</p>
   </div>
   <div class="postre">
     <img src="panque-vainilla.jpg" alt="Panqué Vainilla">
-    <p>Panqué Vainilla - $38</p>
+    <p>Vainilla - $38</p>
   </div>
 </div>
 
 <p>🔸 Aviso: Favor de revisar su cuenta y su cambio. Solicite su ticket.</p>
-
 </div>
+
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>El Crucero - Menú</title>
+<title>El Crucero</title>
 
 <style>
 body {
@@ -15,7 +15,6 @@ body {
 /* HEADER */
 .header {
     position: relative;
-    width: 100%;
     height: 300px;
     overflow: hidden;
 }
@@ -26,7 +25,6 @@ body {
     object-fit: cover;
 }
 
-/* LOGO arriba izquierda */
 .logo {
     position: absolute;
     top: 15px;
@@ -34,13 +32,11 @@ body {
     width: 90px;
 }
 
-/* TEXTO abajo sobre video */
 .slogan {
     position: absolute;
     bottom: 10px;
     width: 100%;
     text-align: center;
-    color: black;
     font-size: 14px;
     background: rgba(255,255,255,0.6);
 }
@@ -48,7 +44,7 @@ body {
 /* BOTONES */
 .botones {
     text-align: center;
-    padding: 20px;
+    padding: 25px;
 }
 
 .botones button {
@@ -58,28 +54,34 @@ body {
     background: #a52a2a;
     color: white;
     border-radius: 5px;
-    cursor: pointer;
-}
-
-.botones button:hover {
-    background: #7a1f1f;
 }
 
 /* SECCIONES */
 .seccion {
-    padding: 20px;
+    padding: 25px;
+    display: none;
 }
 
 .seccion img {
     width: 100%;
     max-width: 300px;
-    display: block;
     margin-bottom: 10px;
+}
+
+/* ANIMACIÓN */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 h2 {
     border-bottom: 2px dotted #a52a2a;
-    padding-bottom: 5px;
 }
 </style>
 
@@ -87,37 +89,46 @@ h2 {
 function mostrarSeccion(id) {
     let secciones = document.querySelectorAll('.seccion');
     secciones.forEach(sec => sec.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
+
+    let activa = document.getElementById(id);
+    activa.style.display = 'block';
+
+    setTimeout(() => {
+        activa.classList.add('visible');
+    }, 100);
 }
+
+window.onload = () => {
+    document.getElementById('caldos').style.display = 'block';
+    document.getElementById('caldos').classList.add('visible');
+};
 </script>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
-    <video autoplay muted loop>
-        <source src="header.mp4" type="video/mp4">
-    </video>
-    <img src="logo.png" class="logo">
-    <div class="slogan">Tradición desde 1994</div>
+<video autoplay muted loop>
+<source src="header.mp4">
+</video>
+<img src="logo.png" class="logo">
+<div class="slogan">Tradición desde 1994</div>
 </div>
 
-<!-- BOTONES -->
 <div class="botones">
-    <button onclick="mostrarSeccion('caldos')">Caldos</button>
-    <button onclick="mostrarSeccion('pancita')">Pancita</button>
-    <button onclick="mostrarSeccion('chilaquiles')">Chilaquiles</button>
-    <button onclick="mostrarSeccion('enchiladas')">Enchiladas</button>
-    <button onclick="mostrarSeccion('asados')">Asados</button>
-    <button onclick="mostrarSeccion('tacos')">Tacos</button>
-    <button onclick="mostrarSeccion('extras')">Extras</button>
-    <button onclick="mostrarSeccion('bebidas')">Bebidas</button>
-    <button onclick="mostrarSeccion('postres')">Postres</button>
+<button onclick="mostrarSeccion('caldos')">Caldos</button>
+<button onclick="mostrarSeccion('pancita')">Pancita</button>
+<button onclick="mostrarSeccion('chilaquiles')">Chilaquiles</button>
+<button onclick="mostrarSeccion('enchiladas')">Enchiladas</button>
+<button onclick="mostrarSeccion('asados')">Asados</button>
+<button onclick="mostrarSeccion('tacos')">Tacos</button>
+<button onclick="mostrarSeccion('extras')">Extras</button>
+<button onclick="mostrarSeccion('bebidas')">Bebidas</button>
+<button onclick="mostrarSeccion('postres')">Postres</button>
 </div>
 
 <!-- CALDOS -->
-<div id="caldos" class="seccion">
+<div id="caldos" class="seccion fade-in">
 <h2>Caldo de Gallina</h2>
 <img src="caldo.jpg">
 <p>Caldo chico $45 | Grande $50</p>
@@ -128,41 +139,63 @@ function mostrarSeccion(id) {
 </div>
 
 <!-- PANCITA -->
-<div id="pancita" class="seccion" style="display:none;">
-<h2>Pancita (Fin de semana)</h2>
+<div id="pancita" class="seccion fade-in">
+<h2>Pancita</h2>
 <img src="pancita.jpg">
 <p>Grande $127 | Chica $120</p>
 </div>
 
 <!-- CHILAQUILES -->
-<div id="chilaquiles" class="seccion" style="display:none;">
+<div id="chilaquiles" class="seccion fade-in">
 <h2>Chilaquiles</h2>
 <img src="chilaquiles.jpg">
-<p>Agua norteña $130 | Arrachera $170</p>
-<p>Gallina $125 | Costilla $130</p>
-<p>Pechuga asada o empanizada $130</p>
-<p>Huevo $120 | Sencillos $90</p>
+<p>Agua norteña $130</p>
+<p>Arrachera $170</p>
+<p>Gallina $125</p>
+<p>Costilla $130</p>
+<p>Pechuga asada $130</p>
+<p>Pechuga empanizada $130</p>
+<p>Huevo $120</p>
+<p>Sencillos $90</p>
 </div>
 
 <!-- ENCHILADAS -->
-<div id="enchiladas" class="seccion" style="display:none;">
+<div id="enchiladas" class="seccion fade-in">
 <h2>Enchiladas</h2>
 <img src="enchiladas.jpg">
-<p>Verdes/Mole desde $90 hasta $170</p>
-<p>Suizas desde $90 hasta $185</p>
+
+<p><b>Verde y Mole</b></p>
+<p>Arrachera $170</p>
+<p>Gallina $125</p>
+<p>Costilla $130</p>
+<p>Pechuga asada $130</p>
+<p>Pechuga empanizada $130</p>
+<p>Huevo $120</p>
+<p>Sencillas $90</p>
+
+<p><b>Suizas</b></p>
+<p>Arrachera $185</p>
+<p>Gallina $145</p>
+<p>Costilla $160</p>
+<p>Pechuga asada $160</p>
+<p>Pechuga empanizada $160</p>
+<p>Sencillas $90</p>
 </div>
 
 <!-- ASADOS -->
-<div id="asados" class="seccion" style="display:none;">
+<div id="asados" class="seccion fade-in">
 <h2>Asados</h2>
 <img src="asados.jpg">
-<p>Arrachera $170 | Pechuga $135</p>
-<p>Costilla $135 | Bistec $135</p>
-<p>Empanizada $135 | Aguja norteña $135</p>
+<p>Arrachera $170</p>
+<p>Pechuga $135</p>
+<p>Costilla $135</p>
+<p>Bistec $135</p>
+<p>Empanizada $135</p>
+<p>Aguja norteña $135</p>
 </div>
 
 <!-- TACOS -->
-<div id="tacos" class="seccion" style="display:none;">
+<div id="tacos" class="seccion fade-in">
 <h2>Tacos</h2>
 <img src="tacos.jpg">
 <p>Todos $50</p>
@@ -170,35 +203,44 @@ function mostrarSeccion(id) {
 </div>
 
 <!-- EXTRAS -->
-<div id="extras" class="seccion" style="display:none;">
+<div id="extras" class="seccion fade-in">
 <h2>Extras</h2>
+
 <img src="hamburguesa.jpg">
 <p>Hamburguesa con papas $120</p>
 
 <img src="chiquipeques.jpg">
-<p>Tiritas, nuggets, dedos de queso $95</p>
+<p>Tiritas $95 | Nuggets $95 | Deditos $95</p>
+<p>Incluye papas y ensalada</p>
 </div>
 
 <!-- BEBIDAS -->
-<div id="bebidas" class="seccion" style="display:none;">
+<div id="bebidas" class="seccion fade-in">
 <h2>Bebidas</h2>
 <img src="bebidas.jpg">
-<p>Limonada/Naranjada $45</p>
-<p>Aguas $37 / $56</p>
-<p>Refrescos, cerveza $45</p>
+<p>Limonada $45 | Naranjada $45</p>
+<p>Horchata $37 / $56</p>
+<p>Jamaica $37 / $56</p>
+<p>Sangría $45</p>
+<p>Refrescos $45 | Cervezas $45</p>
+<p>Agua $30</p>
 <p>Café y té $30</p>
 </div>
 
 <!-- POSTRES -->
-<div id="postres" class="seccion" style="display:none;">
+<div id="postres" class="seccion fade-in">
 <h2>Postres</h2>
-
-<img src="postres.jpg">
-<p>Pasteles $72 | Panqués $38</p>
 
 <img src="helados.jpg">
 <p>Helados ARCE $45</p>
+<p>Sabores varios</p>
 
+<img src="postres.jpg">
+<p>Pasteles $72</p>
+<p>Matilda | Tortuga | Zanahoria | Frambuesa</p>
+
+<p>Panqués $38</p>
+<p>Chocolate | Frutos rojos</p>
 </div>
 
 </body>

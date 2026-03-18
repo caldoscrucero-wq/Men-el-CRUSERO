@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat&display=swap" rel="stylesheet">
 
 <style>
-
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -173,7 +172,6 @@ ul.menu-list.dos-columnas {
   border-radius: 10px;
   margin-bottom: 5px;
 }
-
 </style>
 </head>
 
@@ -184,7 +182,6 @@ ul.menu-list.dos-columnas {
   <video autoplay muted loop playsinline>
     <source src="header.mp4" type="video/mp4">
   </video>
-
   <div class="overlay">
     <img src="logo.png" class="logo">
     <div class="slogan">Tradición desde 1994</div>
@@ -199,7 +196,7 @@ ul.menu-list.dos-columnas {
   <a href="#enchiladas">Enchiladas</a>
   <a href="#asados">Asados</a>
   <a href="#tacos">Tacos</a>
-  <a href="#extras">Extras</a>
+  <a href="#menu-infantil">Menú Infantil</a>
   <a href="#bebidas">Bebidas</a>
   <a href="#postres">Postres</a>
 </div>
@@ -207,82 +204,138 @@ ul.menu-list.dos-columnas {
 <!-- CALDOS -->
 <div id="caldos" class="section">
 <h2>Caldo de Gallina</h2>
-<div class="card">
-<img src="caldo.jpg">
-<p><strong>Chico:</strong> $45</p>
-<p><strong>Grande:</strong> $50</p>
-</div>
+<ul class="menu-list">
+  <li>Caldo solo chico: $45</li>
+  <li>Caldo solo grande: $50</li>
+</ul>
+<h3>Piezas:</h3>
+<ul class="menu-list">
+  <li>Pechuga entera: $220</li>
+  <li>Pechuga 1/2: $110</li>
+  <li>Pechuga 1/4: $88</li>
+  <li>Pierna: $88</li>
+  <li>Muslo: $88</li>
+  <li>Rabadilla: $88</li>
+  <li>Huacal: $84</li>
+  <li>Alones: $72</li>
+</ul>
+<h3>Orden (según disponibilidad):</h3>
+<ul class="menu-list">
+  <li>Patas: $88</li>
+  <li>Mollejas: $88</li>
+  <li>Cabezas: $75</li>
+</ul>
 </div>
 
 <!-- PANCITA -->
 <div id="pancita" class="section">
-<h2>Pancita</h2>
-<div class="card">
-<img src="pancita.jpg">
-<p>Grande: $127</p>
-<p>Chica: $120</p>
-</div>
+<h2>Pancita de res</h2>
+<p>(De viernes a lunes y días festivos)</p>
+<ul class="menu-list">
+  <li>Grande: $127</li>
+  <li>Chica: $120</li>
+</ul>
 </div>
 
 <!-- CHILAQUILES -->
 <div id="chilaquiles" class="section">
 <h2>Chilaquiles</h2>
-<div class="card">
-<img src="chilaquiles.jpg">
-<p>Desde $90 hasta $170</p>
-</div>
+<ul class="menu-list">
+  <li>Aguja norteña: $130</li>
+  <li>Arrachera: $170</li>
+  <li>Carne de gallina: $125</li>
+  <li>Costilla (con o sin hueso): $130</li>
+  <li>Pechuga asada: $130</li>
+  <li>Pechuga empanizada: $130</li>
+  <li>Huevo: $120</li>
+  <li>Sencillos: $90</li>
+</ul>
 </div>
 
 <!-- ENCHILADAS -->
 <div id="enchiladas" class="section">
 <h2>Enchiladas</h2>
-<div class="card">
-<img src="enchiladas.jpg">
-<p>Desde $90 hasta $185</p>
-</div>
+<h3>Verde, Rojas y Mole</h3>
+<ul class="menu-list">
+  <li>Arrachera: $170</li>
+  <li>Carne de gallina: $125</li>
+  <li>Costilla (con o sin hueso): $130</li>
+  <li>Pechuga asada: $130</li>
+  <li>Pechuga empanizada: $130</li>
+  <li>Huevo: $120</li>
+  <li>Sencillas: $90</li>
+</ul>
+<h3>Enchiladas Suizas</h3>
+<ul class="menu-list">
+  <li>Arrachera: $185</li>
+  <li>Carne de gallina: $145</li>
+  <li>Costilla (con o sin hueso): $160</li>
+  <li>Pechuga asada: $160</li>
+  <li>Pechuga empanizada: $160</li>
+  <li>Sencillas: $90</li>
+</ul>
 </div>
 
 <!-- ASADOS -->
 <div id="asados" class="section">
 <h2>Asados</h2>
-<div class="card">
-<img src="asados.jpg">
-<p>Desde $135 hasta $170</p>
-</div>
+<ul class="menu-list">
+  <li>Arrachera: $170</li>
+  <li>Pechuga: $135</li>
+  <li>Costilla (con o sin hueso): $135</li>
+  <li>Bistec: $135</li>
+  <li>Pechuga empanizada: $135</li>
+  <li>Aguja norteña: $135</li>
+</ul>
 </div>
 
 <!-- TACOS -->
 <div id="tacos" class="section">
 <h2>Tacos</h2>
-<div class="card">
-<img src="tacos.jpg">
-<p>$50 c/u</p>
-</div>
-</div>
-
-<!-- EXTRAS -->
-<div id="extras" class="section">
-<h2>Extras</h2>
-
-<div class="card">
-<img src="hamburguesa.jpg">
-<p>Hamburguesa con papas: $120</p>
+<ul class="menu-list">
+  <li>Arrachera: $50</li>
+  <li>Pechuga asada: $50</li>
+  <li>Costilla asada: $50</li>
+  <li>Bistec asado: $50</li>
+  <li>Pechuga empanizada: $50</li>
+  <li>Aguja norteña: $50</li>
+  <li>Tacos dorados: $115</li>
+</ul>
 </div>
 
-<div class="card">
-<img src="chiquipeques.jpg">
-<p>Tiritas, nuggets o queso: $95</p>
-</div>
-
+<!-- MENÚ INFANTIL -->
+<div id="menu-infantil" class="section">
+<h2>Menú Infantil</h2>
+<ul class="menu-list">
+  <li>Tiritas de pollo: $95</li>
+  <li>Deditos de queso mozzarella: $95</li>
+  <li>Nuggets: $95 (Incluye guarnición, papas y ensalada)</li>
+  <li>Hamburguesas con papas: $95</li>
+</ul>
 </div>
 
 <!-- BEBIDAS -->
 <div id="bebidas" class="section">
 <h2>Bebidas</h2>
-<div class="card">
-<img src="bebidas.jpg">
-<p>Desde $30 a $56</p>
-</div>
+<h3>Bebidas Frías</h3>
+<ul class="menu-list">
+  <li>Limonada: $45</li>
+  <li>Naranjada: $45</li>
+  <li>Agua de horchata: $37 (500 ml) $56 (900 ml)</li>
+  <li>Agua de Jamaica: $37 (500 ml) $56 (900 ml)</li>
+  <li>Sangría preparada: $45</li>
+  <li>Agua mineral: $30</li>
+  <li>Agua embotellada: $30</li>
+  <li>Refrescos: $30</li>
+  <li>Cerveza sencilla: $50</li>
+  <li>Cerveza preparada: $57 (escarchado de chamoy, con clamato, limón y salsa cubana)</li>
+</ul>
+
+<h3>Bebidas Calientes</h3>
+<ul class="menu-list">
+  <li>Café de olla: $30</li>
+  <li>Té (diversos sabores): $30</li>
+</ul>
 </div>
 
 <!-- POSTRES -->
@@ -291,15 +344,18 @@ ul.menu-list.dos-columnas {
 
 <!-- HELADOS A DOS COLUMNAS -->
 <ul class="menu-list dos-columnas">
+  <li>Fresas con crema</li>
   <li>Piña</li>
-  <li>Mango</li>
-  <li>Fresa</li>
-  <li>Limón</li>
   <li>Manzana</li>
-  <li>Coco</li>
+  <li>Mango</li>
   <li>Mamey</li>
   <li>Naranja</li>
+  <li>Limón</li>
+  <li>Coco</li>
   <li>Queso con zarzamora</li>
+  <li>Beso de ángel</li>
+  <li>Nuez</li>
+  <li>Chongos zamoranos</li>
 </ul>
 
 <!-- POSTRES CON TARJETAS MULTIPLES -->
@@ -317,6 +373,10 @@ ul.menu-list.dos-columnas {
     <p>Pastel Zanahoria - $72</p>
   </div>
   <div class="postre">
+    <img src="pastel-frambuesa.jpg" alt="Pastel Frambuesa">
+    <p>Pastel Frambuesa - $72</p>
+  </div>
+  <div class="postre">
     <img src="panque-chocolate.jpg" alt="Panqué Chocolate">
     <p>Panqué Chocolate - $38</p>
   </div>
@@ -324,9 +384,14 @@ ul.menu-list.dos-columnas {
     <img src="panque-frutos-rojos.jpg" alt="Panqué Frutos Rojos">
     <p>Panqué Frutos Rojos - $38</p>
   </div>
+  <div class="postre">
+    <img src="panque-vainilla.jpg" alt="Panqué Vainilla">
+    <p>Panqué Vainilla - $38</p>
+  </div>
 </div>
 
-</div>
+<p>🔸 Aviso: Favor de revisar su cuenta y su cambio. Solicite su ticket.</p>
 
+</div>
 </body>
 </html>

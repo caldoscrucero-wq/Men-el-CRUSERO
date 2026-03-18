@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El Crucero</title>
 
-<!-- TIPOGRAFÍA -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat&display=swap" rel="stylesheet">
 
 <style>
@@ -32,13 +31,27 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(60,20,20,0.5);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  text-align:center;
+  background: rgba(60,20,20,0.3);
+}
+
+.logo {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 100px;
+}
+
+.slogan {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: black;
+  background: rgba(255,255,255,0.6);
+  padding: 5px 0;
+  letter-spacing: 1px;
+  font-family: 'Playfair Display', serif;
 }
 
 /* BOTONES */
@@ -50,6 +63,7 @@ body {
   background: white;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 .menu-nav a {
@@ -66,16 +80,10 @@ body {
   padding: 20px;
 }
 
-h1, h2 {
+h2 {
   font-family: 'Playfair Display', serif;
-  letter-spacing: 1px;
-}
-
-.section h2 {
   text-align: center;
   color: #7a1f1f;
-  position: relative;
-  margin-bottom: 20px;
 }
 
 .section h2::after {
@@ -92,6 +100,7 @@ h1, h2 {
   background: #fff;
   border-radius: 10px;
   padding: 15px;
+  margin-bottom: 20px;
 
   border: 3px solid transparent;
   border-image: repeating-linear-gradient(
@@ -113,7 +122,6 @@ h1, h2 {
   margin-bottom:10px;
 }
 
-/* LISTAS BONITAS */
 .card p {
   margin: 5px 0;
   padding-left: 15px;
@@ -125,7 +133,6 @@ h1, h2 {
   position: absolute;
   left: 0;
   color: #b22222;
-  font-weight: bold;
 }
 
 strong {
@@ -133,7 +140,6 @@ strong {
 }
 
 </style>
-
 </head>
 
 <body>
@@ -143,10 +149,10 @@ strong {
   <video autoplay muted loop playsinline>
     <source src="header.mp4" type="video/mp4">
   </video>
+
   <div class="overlay">
-    <img src="logo.png" width="120">
-    <h1>EL CRUCERO</h1>
-    <p>Tradición desde 1994</p>
+    <img src="logo.png" class="logo">
+    <div class="slogan">Tradición desde 1994</div>
   </div>
 </div>
 
@@ -165,37 +171,21 @@ strong {
 
 <!-- CALDOS -->
 <div id="caldos" class="section">
-<h2>🥣 Caldo de Gallina</h2>
+<h2>Caldo de Gallina</h2>
 <div class="card">
 <img src="caldo.jpg">
-<p><strong>Caldo solo:</strong></p>
-<p>Chico: $45</p>
-<p>Grande: $50</p>
-
-<p><strong>Piezas:</strong></p>
-<p>Pechuga entera: $220</p>
-<p>Pechuga 1/2: $110</p>
-<p>Pechuga 1/4: $88</p>
-<p>Pierna: $88</p>
-<p>Muslo: $88</p>
-<p>Rabadilla: $88</p>
-<p>Huacal: $84</p>
-<p>Alones: $72</p>
-
-<p><strong>Orden:</strong></p>
-<p>Patas: $88</p>
-<p>Mollejas: $88</p>
-<p>Cabezas: $75 (según disponibilidad)</p>
+<p><strong>Chico:</strong> $45</p>
+<p><strong>Grande:</strong> $50</p>
 </div>
 </div>
 
 <!-- PANCITA -->
 <div id="pancita" class="section">
-<h2>Pancita (Fin de Semana)</h2>
+<h2>Pancita</h2>
 <div class="card">
 <img src="pancita.jpg">
 <p>Grande: $127</p>
-<p>Chica: $120 (según disponibilidad)</p>
+<p>Chica: $120</p>
 </div>
 </div>
 
@@ -204,14 +194,7 @@ strong {
 <h2>Chilaquiles</h2>
 <div class="card">
 <img src="chilaquiles.jpg">
-<p>Agua norteña: $130</p>
-<p>Arrachera: $170</p>
-<p>Carne de gallina: $125</p>
-<p>Costilla (con o sin hueso): $130</p>
-<p>Pechuga asada: $130</p>
-<p>Pechuga empanizada: $130</p>
-<p>Huevo: $120</p>
-<p>Sencillos: $90</p>
+<p>Desde $90 hasta $170</p>
 </div>
 </div>
 
@@ -220,22 +203,7 @@ strong {
 <h2>Enchiladas</h2>
 <div class="card">
 <img src="enchiladas.jpg">
-<p><strong>Verde y Mole:</strong></p>
-<p>Arrachera: $170</p>
-<p>Carne de gallina: $125</p>
-<p>Costilla (con o sin hueso): $130</p>
-<p>Pechuga asada: $130</p>
-<p>Pechuga empanizada: $130</p>
-<p>Huevo: $120</p>
-<p>Sencillas: $90</p>
-
-<p><strong>Suizas:</strong></p>
-<p>Arrachera: $185</p>
-<p>Carne de gallina: $145</p>
-<p>Costilla (con o sin hueso): $160</p>
-<p>Pechuga asada: $160</p>
-<p>Pechuga empanizada: $160</p>
-<p>Sencillas: $90</p>
+<p>Desde $90 hasta $185</p>
 </div>
 </div>
 
@@ -244,12 +212,7 @@ strong {
 <h2>Asados</h2>
 <div class="card">
 <img src="asados.jpg">
-<p>Arrachera: $170</p>
-<p>Pechuga: $135</p>
-<p>Costilla (con o sin hueso): $135</p>
-<p>Bistec: $135</p>
-<p>Pechuga empanizada: $135</p>
-<p>Aguja norteña: $135</p>
+<p>Desde $135 hasta $170</p>
 </div>
 </div>
 
@@ -258,29 +221,24 @@ strong {
 <h2>Tacos</h2>
 <div class="card">
 <img src="tacos.jpg">
-<p>Arrachera: $50</p>
-<p>Pechuga asada: $50</p>
-<p>Costilla asada: $50</p>
-<p>Bistec asado: $50</p>
-<p>Pechuga empanizada: $50</p>
-<p>Aguja norteña: $50</p>
-<p>Tacos dorados: $115</p>
+<p>$50 c/u</p>
 </div>
 </div>
 
 <!-- EXTRAS -->
 <div id="extras" class="section">
 <h2>Extras</h2>
+
 <div class="card">
 <img src="hamburguesa.jpg">
 <p>Hamburguesa con papas: $120</p>
-
-<p><strong>Chiquipeques:</strong></p>
-<p>Tiritas de pollo: $95</p>
-<p>Deditos de queso: $95</p>
-<p>Nuggets: $95</p>
-<p><em>Incluye guarnición, papas y ensalada</em></p>
 </div>
+
+<div class="card">
+<img src="chiquipeques.jpg">
+<p>Tiritas, nuggets o queso: $95</p>
+</div>
+
 </div>
 
 <!-- BEBIDAS -->
@@ -288,59 +246,24 @@ strong {
 <h2>Bebidas</h2>
 <div class="card">
 <img src="bebidas.jpg">
-
-<p><strong>Frías:</strong></p>
-<p>Limonada: $45</p>
-<p>Naranjada: $45</p>
-<p>Horchata: $37 (1/2 litro) / $56 (litro)</p>
-<p>Jamaica: $37 (1/2 litro) / $56 (litro)</p>
-<p>Sangría preparada: $45</p>
-<p>Agua mineral: $30</p>
-<p>Agua embotellada: $30</p>
-<p>Refrescos: $45</p>
-<p>Cervezas: $45</p>
-
-<p><strong>Calientes:</strong></p>
-<p>Café de olla: $30</p>
-<p>Té: $30</p>
+<p>Desde $30 a $56</p>
 </div>
 </div>
 
 <!-- POSTRES -->
 <div id="postres" class="section">
 <h2>Postres</h2>
+
+<div class="card">
+<img src="helados.jpg">
+<p>Helados: $45</p>
+</div>
+
 <div class="card">
 <img src="postres.jpg">
-
-<p><strong>Helados ARCE:</strong> $45 c/u</p>
-<p>Fresas con crema</p>
-<p>Piña</p>
-<p>Manzana</p>
-<p>Mango</p>
-<p>Mamey</p>
-<p>Naranja</p>
-<p>Limón</p>
-<p>Coco</p>
-<p>Queso con zarzamora</p>
-
-<p><strong>Pasteles:</strong> $72 c/u</p>
-<p>Matilda</p>
-<p>Tortuga</p>
-<p>Zanahoria</p>
-<p>Frambuesa</p>
-
-<p><strong>Panqués:</strong> $38 c/u</p>
-<p>Chocolate</p>
-<p>Frutos rojos</p>
-
-</div>
+<p>Pasteles: $72 | Panqués: $38</p>
 </div>
 
-<!-- AVISO -->
-<div style="text-align:center; padding:20px;">
-<p><strong>🔸 Aviso</strong></p>
-<p>Favor de revisar su cuenta y su cambio. Solicite su ticket.</p>
-<p>No contamos con servicio a domicilio.</p>
 </div>
 
 </body>

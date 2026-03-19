@@ -37,24 +37,23 @@ body {
 .logo {
   position: absolute;
   top: 15px;
-  below: 15px;
+  left: 15px; /* Si quieres que esté a la izquierda */
   width: 100px;
+  z-index: 2;
 }
-
-
-
   
 .slogan {
-  position: bottom left;
-  below: 18px;
-  width: 100%;
-  text-align: bottom left;
+  position: absolute;
+  top: 130px; /* Ajusta según altura del logo y video */
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 18px;
   color: #fff;
   font-family: 'Playfair Display', serif;
   background: rgba(0,0,0,0.5);
   padding: 5px 10px;
   border-radius: 5px;
+  z-index: 2;
 }
 
 /* BOTONES */
@@ -178,14 +177,12 @@ ul.menu-list.dos-columnas {
 <body>
 
 <!-- HEADER -->
-<div class="header">
-  <video autoplay muted loop playsinline>
+ <video autoplay muted loop playsinline>
     <source src="header.mp4" type="video/mp4">
   </video>
   <div class="overlay">
     <img src="logo.png" class="logo">
-    
-               <div class="slogan">Tradición desde 1994</div>
+    <div class="slogan">Tradición desde 1994</div>
   </div>
 </div>
 

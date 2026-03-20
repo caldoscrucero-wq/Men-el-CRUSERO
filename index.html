@@ -7,34 +7,7 @@
 
 <style>
 
-  /* ===== ARREGLO ENCABEZADO ===== */
-.video-header {
-  position: relative;
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-}
-
-.video-header video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.logo-header {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 180px;
-}
-
-.eslogan-header {
-  position: absolute;
-  bottom: 10px;
-  left: 20px;
-  color: #fff;
-  font-size: 14px;
-/* ===== ESTILO GENERAL ===== */
+/* ===== GENERAL ===== */
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
@@ -42,90 +15,125 @@ body {
   color: #3e2f1c;
 }
 
-/* ===== TITULOS ===== */
-h2 {
-  font-family: 'Georgia', serif;
-  font-size: 2.2em;
-  margin-bottom: 30px;
-  text-align: center;
+/* ===== ENCABEZADO ===== */
+.video-header {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
 }
-
-/* ===== SECCIONES ===== */
-.section {
-  max-width: 1100px;
-  margin: 60px auto;
-  padding: 40px 25px;
-  border-radius: 20px;
-  background: #ffffff;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+.video-header video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-
-.section-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
+.logo-header {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 120px;
 }
-
-.section-left {
-  flex: 1 1 300px;
-}
-
-.section-left ul {
-  list-style: none;
-  padding: 0;
-}
-
-.section-left li {
-  padding: 6px 0;
-  border-bottom: 1px dashed #ccc;
-}
-
-.section-right {
-  flex: 1 1 300px;
-  text-align: center;
-}
-
-.section-right img {
-  max-width: 100%;
-  border-radius: 12px;
-  margin-bottom: 10px;
-}
-
-.subcategory {
+.eslogan-header {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  font-size: 1.3em;
   font-weight: bold;
-  margin: 25px 0 10px;
-  font-size: 1.2em;
-  color: #c0392b;
+  color: white;
 }
 
-.aviso {
-  background-color: #ffdd99;
-  padding: 12px;
-  margin-top: 20px;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 10px;
-}
-
-/* BOTONES */
+/* ===== BOTONES ===== */
 .buttons-container {
   display: flex;
   overflow-x: auto;
   background: #fff3e0;
-  padding: 10px 0;
+  padding: 12px;
 }
 .buttons-container button {
-  flex: 0 0 auto;
-  margin: 0 10px;
-  padding: 10px 20px;
-  background-color: #3e2f1c;
-  color: #fff;
+  margin: 0 8px;
+  padding: 10px 18px;
+  background: #3e2f1c;
+  color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.buttons-container button:hover {
+  background: #6b4a2f;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
+/* ===== TARJETAS ===== */
+.section {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+h2 {
+  font-family: Georgia, serif;
+  margin-bottom: 20px;
+}
+
+/* ===== CONTENIDO ===== */
+.section-content {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.section-left {
+  flex: 1;
+}
+.section-left ul {
+  padding-left: 18px;
+}
+.section-right {
+  flex: 1;
+  text-align: center;
+}
+.section-right img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+/* ===== SUBCATEGORIAS ===== */
+.subcategory {
+  font-weight: bold;
+  margin: 20px 0 10px;
+}
+
+/* ===== POSTRES ===== */
+.postres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+.postres-grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+.postres-grid span {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ===== AVISO ===== */
+.aviso {
+  background: #ffdd99;
+  margin-top: 20px;
+  padding: 12px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
   .section-content {
     flex-direction: column;
   }
@@ -136,10 +144,10 @@ h2 {
 
 <body>
 
-<!-- ENCABEZADO ORIGINAL -->
+<!-- ENCABEZADO -->
 <div class="video-header">
   <video autoplay muted loop>
-    <source src="header.mp4" type="video/mp4">
+    <source src="header.mp4">
   </video>
   <img src="logo.png" class="logo-header">
   <div class="eslogan-header">Tradición desde 1994</div>
@@ -147,297 +155,165 @@ h2 {
 
 <!-- BOTONES -->
 <div class="buttons-container">
-  <button onclick="scrollToSection('caldos')">Caldos</button>
-  <button onclick="scrollToSection('pancita')">Pancita</button>
-  <button onclick="scrollToSection('chilaquiles')">Chilaquiles</button>
-  <button onclick="scrollToSection('enchiladas')">Enchiladas</button>
-  <button onclick="scrollToSection('asados')">Asados</button>
-  <button onclick="scrollToSection('tacos')">Tacos</button>
-  <button onclick="scrollToSection('infantil')">Menú infantil</button>
-  <button onclick="scrollToSection('bebidas')">Bebidas</button>
-  <button onclick="scrollToSection('postres')">Postres</button>
+  <button onclick="go('caldos')">Caldos</button>
+  <button onclick="go('pancita')">Pancita</button>
+  <button onclick="go('chilaquiles')">Chilaquiles</button>
+  <button onclick="go('enchiladas')">Enchiladas</button>
+  <button onclick="go('asados')">Asados</button>
+  <button onclick="go('tacos')">Tacos</button>
+  <button onclick="go('infantil')">Infantil</button>
+  <button onclick="go('bebidas')">Bebidas</button>
+  <button onclick="go('postres')">Postres</button>
 </div>
 
 <!-- CALDOS -->
 <div class="section" id="caldos">
 <h2>Caldos</h2>
 <div class="section-content">
-<div class="section-left">
 <ul>
-<li>Chico: $45</li>
-<li>Grande: $50</li>
-<li>Pechuga entera: $220</li>
-<li>Pechuga 1/2: $110</li>
-<li>Pechuga 1/4: $88</li>
-<li>Pierna: $88</li>
-<li>Muslo: $88</li>
-<li>Rabadilla: $88</li>
-<li>Huacal: $84</li>
-<li>Alones: $72</li>
-<li>Patas: $88</li>
-<li>Mollejas: $88</li>
-<li>Cabezas: $75</li>
+<li>Chico: $45</li><li>Grande: $50</li><li>Pechuga entera: $220</li>
+<li>Pechuga 1/2: $110</li><li>Pechuga 1/4: $88</li>
+<li>Pierna: $88</li><li>Muslo: $88</li><li>Rabadilla: $88</li>
+<li>Huacal: $84</li><li>Alones: $72</li><li>Patas: $88</li>
+<li>Mollejas: $88</li><li>Cabezas: $75</li>
 </ul>
-</div>
-<div class="section-right">
 <img src="caldo.jpg">
 </div>
-</div>
-<div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+<div class="aviso">🔸 Revise su cuenta y cambio.</div>
 </div>
 
-<!-- PANcita -->
+<!-- PANCITA -->
 <div class="section" id="pancita">
 <h2>Pancita</h2>
 <div class="section-content">
-<div class="section-left">
 <ul>
 <li>Grande: $127</li>
 <li>Chico: $120</li>
-<li>(Disponibles solo viernes a lunes y festivos)</li>
+<li>Disponible fines y festivos</li>
 </ul>
-</div>
-<div class="section-right">
 <img src="pancita.jpg">
 </div>
-</div>
-<div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
 </div>
 
 <!-- CHILAQUILES -->
 <div class="section" id="chilaquiles">
 <h2>Chilaquiles</h2>
 <div class="section-content">
-<div class="section-left">
 <ul>
 <li>Aguja norteña: $130</li>
 <li>Arrachera: $170</li>
-<li>Carne de gallina: $125</li>
+<li>Gallina: $125</li>
 <li>Costilla: $130</li>
-<li>Pechuga asada: $130</li>
-<li>Pechuga empanizada: $130</li>
+<li>Pechuga: $130</li>
+<li>Empanizada: $130</li>
 <li>Huevo: $120</li>
 <li>Sencillos: $90</li>
 </ul>
-</div>
-<div class="section-right">
 <img src="chilaquiles.jpg">
 </div>
-</div>
-<div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
 </div>
 
 <!-- ENCHILADAS -->
 <div class="section" id="enchiladas">
 <h2>Enchiladas</h2>
 
-<div class="subcategory">Verdes, Rojas y Mole</div>
-<div class="section-content">
-<div class="section-left">
+<div class="subcategory">Tradicionales</div>
 <ul>
 <li>Arrachera: $170</li>
-<li>Carne de gallina: $125</li>
+<li>Gallina: $125</li>
 <li>Costilla: $130</li>
-<li>Pechuga asada: $130</li>
-<li>Pechuga empanizada: $130</li>
+<li>Pechuga: $130</li>
+<li>Empanizada: $130</li>
 <li>Huevo: $120</li>
 <li>Sencillas: $90</li>
 </ul>
-</div>
-<div class="section-right">
-<img src="enchiladas.jpg">
-</div>
-</div>
 
-<div class="subcategory">Enchiladas Suizas</div>
-<div class="section-content">
-<div class="section-left">
+<div class="subcategory">Suizas</div>
 <ul>
 <li>Arrachera: $185</li>
-<li>Carne de gallina: $145</li>
+<li>Gallina: $145</li>
 <li>Costilla: $160</li>
-<li>Pechuga asada: $160</li>
-<li>Pechuga empanizada: $160</li>
-<li>Sencillas: $90</li>
+<li>Pechuga: $160</li>
+<li>Empanizada: $160</li>
 </ul>
-</div>
-<div class="section-right">
-<img src="enmoladas.jpg">
-</div>
-</div>
 
-<div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+<img src="enchiladas.jpg">
 </div>
 
 <!-- ASADOS -->
 <div class="section" id="asados">
 <h2>Asados</h2>
-<div class="section-content">
-<div class="section-left">
 <ul>
 <li>Arrachera: $170</li>
 <li>Pechuga: $135</li>
 <li>Costilla: $135</li>
 <li>Bistec: $135</li>
-<li>Pechuga empanizada: $135</li>
-<li>Aguja norteña: $135</li>
-<li>Incluye guarnición, ensalada y chilaquiles</li>
+<li>Incluye guarnición</li>
 </ul>
-</div>
-<div class="section-right">
 <img src="asados.jpg">
-</div>
-</div>
-<div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
 </div>
 
 <!-- TACOS -->
 <div class="section" id="tacos">
 <h2>Tacos</h2>
-<div class="section-content">
-<div class="section-left">
 <ul>
-<li>Arrachera: $50</li>
-<li>Pechuga asada: $50</li>
-<li>Costilla asada: $50</li>
-<li>Bistec asado: $50</li>
-<li>Pechuga empanizada: $50</li>
-<li>Aguja norteña: $50</li>
-<li>Tacos dorados: $115</li>
+<li>Todos: $50</li>
+<li>Dorados: $115</li>
 </ul>
-</div>
-<div class="section-right">
 <img src="tacos dorados.jpg">
-</div>
-</div>
-<div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
 </div>
 
 <!-- INFANTIL -->
 <div class="section" id="infantil">
 <h2>Menú Infantil</h2>
-<div class="section-content">
-<div class="section-left">
 <ul>
-<li>Tiritas de pollo: $95</li>
-<li>Deditos de queso mozzarella: $95</li>
+<li>Tiritas: $95</li>
 <li>Nuggets: $95</li>
-<li>Incluye guarnición, papas y ensalada</li>
-<li>Hamburguesas con papas: $95</li>
+<li>Hamburguesa: $95</li>
 </ul>
-</div>
-<div class="section-right">
-<img src="tiritas.jpg">
 <img src="hamburguesa.jpg">
-</div>
-</div>
-<div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
 </div>
 
 <!-- BEBIDAS -->
 <div class="section" id="bebidas">
 <h2>Bebidas</h2>
-
-<div class="subcategory">Frías</div>
-<div class="section-content">
-<div class="section-left">
 <ul>
 <li>Limonada: $45</li>
 <li>Naranjada: $45</li>
-<li>Horchata: $37 / $56</li>
-<li>Jamaica: $37 / $56</li>
-<li>Sangría preparada: $45</li>
-<li>Agua mineral: $30</li>
-<li>Agua embotellada: $30</li>
 <li>Refrescos: $30</li>
 <li>Cerveza: $50</li>
-<li>Cerveza preparada: $57</li>
 </ul>
-</div>
-<div class="section-right">
 <img src="frías.jpg">
-<img src="cerveza.jpg">
-</div>
 </div>
 
-<div class="subcategory">Calientes</div>
-<div class="section-content">
-<div class="section-left">
-<ul>
-<li>Café de olla: $30</li>
-<li>Nescafé: $30</li>
-<li>Té: $30</li>
-</ul>
-</div>
-<div class="section-right">
-<img src="calientes.jpg">
-</div>
-</div>
-
-<div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
-</div>
-
-<!-- POSTRES -->
+<!-- POSTRES (YA CON TODO 👇) -->
 <div class="section" id="postres">
 <h2>Postres</h2>
 
-<div class="subcategory">Helados</div>
-<div class="section-content">
-<div class="section-left">
+<div class="subcategory">Helados $68</div>
 <ul>
-<li>Fresas con crema</li>
-<li>Piña</li>
-<li>Manzana</li>
-<li>Mango</li>
-<li>Mamey</li>
-<li>Naranja</li>
-<li>Limón</li>
-<li>Coco</li>
-<li>Queso con zarzamora</li>
-<li>Beso de ángel</li>
-<li>Nuez</li>
-<li>Chongos zamoranos</li>
+<li>Fresa, mango, coco, nuez, zarzamora</li>
 </ul>
-</div>
-<div class="section-right">
-<img src="helados.jpg">
-</div>
+
+<div class="subcategory">Pasteles $72</div>
+<div class="postres-grid">
+<div><img src="matilda.jpg"><span>Matilda</span></div>
+<div><img src="tortuga.jpg"><span>Tortuga</span></div>
+<div><img src="zanahoria.jpg"><span>Zanahoria</span></div>
+<div><img src="frambuesa.jpg"><span>Frambuesa</span></div>
 </div>
 
-<div class="subcategory">Pasteles</div>
-<div class="section-content">
-<div class="section-left">
-<ul>
-<li>Pastel de chocolate</li>
-<li>Pastel tres leches</li>
-<li>Pastel de zanahoria</li>
-<li>Pastel de queso</li>
-</ul>
-</div>
-<div class="section-right">
-<img src="pasteles.jpg">
-</div>
+<div class="subcategory">Panqués $38</div>
+<div class="postres-grid">
+<div><img src="chocolate.jpg"><span>Chocolate</span></div>
+<div><img src="vainilla.jpg"><span>Vainilla</span></div>
+<div><img src="frutos.jpg"><span>Frutos</span></div>
 </div>
 
-<div class="subcategory">Panqués</div>
-<div class="section-content">
-<div class="section-left">
-<ul>
-<li>Panqué de elote</li>
-<li>Panqué de naranja</li>
-<li>Panqué marmoleado</li>
-</ul>
-</div>
-<div class="section-right">
-<img src="panques.jpg">
-</div>
-</div>
-
-<div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
 </div>
 
 <script>
-function scrollToSection(id){
+function go(id){
   document.getElementById(id).scrollIntoView({behavior:'smooth'});
 }
 </script>

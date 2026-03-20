@@ -23,21 +23,20 @@ h2 {
   text-align: center;
 }
 
-/* ===== BLOQUES TIPO PDF ===== */
+/* ===== SECCIONES ===== */
 .section {
   max-width: 1100px;
-  margin: 50px auto;
+  margin: 60px auto;
   padding: 40px 25px;
   border-radius: 20px;
-  background: white;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* ===== CONTENIDO INTERNO ===== */
 .section-content {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
 }
 
 .section-left {
@@ -50,7 +49,7 @@ h2 {
 }
 
 .section-left li {
-  padding: 5px 0;
+  padding: 6px 0;
   border-bottom: 1px dashed #ccc;
 }
 
@@ -62,9 +61,9 @@ h2 {
 .section-right img {
   max-width: 100%;
   border-radius: 12px;
+  margin-bottom: 10px;
 }
 
-/* ===== SUBCATEGORIAS ===== */
 .subcategory {
   font-weight: bold;
   margin: 25px 0 10px;
@@ -72,7 +71,6 @@ h2 {
   color: #c0392b;
 }
 
-/* ===== AVISO ===== */
 .aviso {
   background-color: #ffdd99;
   padding: 12px;
@@ -82,7 +80,7 @@ h2 {
   border-radius: 10px;
 }
 
-/* ===== BOTONES ===== */
+/* BOTONES */
 .buttons-container {
   display: flex;
   overflow-x: auto;
@@ -99,7 +97,7 @@ h2 {
   border-radius: 10px;
 }
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .section-content {
     flex-direction: column;
@@ -111,7 +109,7 @@ h2 {
 
 <body>
 
-<!-- ===== ENCABEZADO (RESPETADO) ===== -->
+<!-- ENCABEZADO ORIGINAL -->
 <div class="video-header">
   <video autoplay muted loop>
     <source src="header.mp4" type="video/mp4">
@@ -120,7 +118,7 @@ h2 {
   <div class="eslogan-header">Tradición desde 1994</div>
 </div>
 
-<!-- ===== BOTONES (RESPETADOS) ===== -->
+<!-- BOTONES -->
 <div class="buttons-container">
   <button onclick="scrollToSection('caldos')">Caldos</button>
   <button onclick="scrollToSection('pancita')">Pancita</button>
@@ -133,11 +131,10 @@ h2 {
   <button onclick="scrollToSection('postres')">Postres</button>
 </div>
 
-<!-- ===== CALDOS ===== -->
+<!-- CALDOS -->
 <div class="section" id="caldos">
 <h2>Caldos</h2>
 <div class="section-content">
-
 <div class="section-left">
 <ul>
 <li>Chico: $45</li>
@@ -155,37 +152,262 @@ h2 {
 <li>Cabezas: $75</li>
 </ul>
 </div>
-
 <div class="section-right">
 <img src="caldo.jpg">
 </div>
-
 </div>
 <div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
 </div>
 
-<!-- ===== PANcita ===== -->
+<!-- PANcita -->
 <div class="section" id="pancita">
 <h2>Pancita</h2>
 <div class="section-content">
-
 <div class="section-left">
 <ul>
 <li>Grande: $127</li>
 <li>Chico: $120</li>
-<li>Disponible fines de semana</li>
+<li>(Disponibles solo viernes a lunes y festivos)</li>
 </ul>
 </div>
-
 <div class="section-right">
 <img src="pancita.jpg">
 </div>
-
 </div>
 <div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
 </div>
 
-<!-- (SIGUE IGUAL CON TODAS TUS SECCIONES, MISMA ESTRUCTURA) -->
+<!-- CHILAQUILES -->
+<div class="section" id="chilaquiles">
+<h2>Chilaquiles</h2>
+<div class="section-content">
+<div class="section-left">
+<ul>
+<li>Aguja norteña: $130</li>
+<li>Arrachera: $170</li>
+<li>Carne de gallina: $125</li>
+<li>Costilla: $130</li>
+<li>Pechuga asada: $130</li>
+<li>Pechuga empanizada: $130</li>
+<li>Huevo: $120</li>
+<li>Sencillos: $90</li>
+</ul>
+</div>
+<div class="section-right">
+<img src="chilaquiles.jpg">
+</div>
+</div>
+<div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+</div>
+
+<!-- ENCHILADAS -->
+<div class="section" id="enchiladas">
+<h2>Enchiladas</h2>
+
+<div class="subcategory">Verdes, Rojas y Mole</div>
+<div class="section-content">
+<div class="section-left">
+<ul>
+<li>Arrachera: $170</li>
+<li>Carne de gallina: $125</li>
+<li>Costilla: $130</li>
+<li>Pechuga asada: $130</li>
+<li>Pechuga empanizada: $130</li>
+<li>Huevo: $120</li>
+<li>Sencillas: $90</li>
+</ul>
+</div>
+<div class="section-right">
+<img src="enchiladas.jpg">
+</div>
+</div>
+
+<div class="subcategory">Enchiladas Suizas</div>
+<div class="section-content">
+<div class="section-left">
+<ul>
+<li>Arrachera: $185</li>
+<li>Carne de gallina: $145</li>
+<li>Costilla: $160</li>
+<li>Pechuga asada: $160</li>
+<li>Pechuga empanizada: $160</li>
+<li>Sencillas: $90</li>
+</ul>
+</div>
+<div class="section-right">
+<img src="enmoladas.jpg">
+</div>
+</div>
+
+<div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+</div>
+
+<!-- ASADOS -->
+<div class="section" id="asados">
+<h2>Asados</h2>
+<div class="section-content">
+<div class="section-left">
+<ul>
+<li>Arrachera: $170</li>
+<li>Pechuga: $135</li>
+<li>Costilla: $135</li>
+<li>Bistec: $135</li>
+<li>Pechuga empanizada: $135</li>
+<li>Aguja norteña: $135</li>
+<li>Incluye guarnición, ensalada y chilaquiles</li>
+</ul>
+</div>
+<div class="section-right">
+<img src="asados.jpg">
+</div>
+</div>
+<div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+</div>
+
+<!-- TACOS -->
+<div class="section" id="tacos">
+<h2>Tacos</h2>
+<div class="section-content">
+<div class="section-left">
+<ul>
+<li>Arrachera: $50</li>
+<li>Pechuga asada: $50</li>
+<li>Costilla asada: $50</li>
+<li>Bistec asado: $50</li>
+<li>Pechuga empanizada: $50</li>
+<li>Aguja norteña: $50</li>
+<li>Tacos dorados: $115</li>
+</ul>
+</div>
+<div class="section-right">
+<img src="tacos dorados.jpg">
+</div>
+</div>
+<div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+</div>
+
+<!-- INFANTIL -->
+<div class="section" id="infantil">
+<h2>Menú Infantil</h2>
+<div class="section-content">
+<div class="section-left">
+<ul>
+<li>Tiritas de pollo: $95</li>
+<li>Deditos de queso mozzarella: $95</li>
+<li>Nuggets: $95</li>
+<li>Incluye guarnición, papas y ensalada</li>
+<li>Hamburguesas con papas: $95</li>
+</ul>
+</div>
+<div class="section-right">
+<img src="tiritas.jpg">
+<img src="hamburguesa.jpg">
+</div>
+</div>
+<div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+</div>
+
+<!-- BEBIDAS -->
+<div class="section" id="bebidas">
+<h2>Bebidas</h2>
+
+<div class="subcategory">Frías</div>
+<div class="section-content">
+<div class="section-left">
+<ul>
+<li>Limonada: $45</li>
+<li>Naranjada: $45</li>
+<li>Horchata: $37 / $56</li>
+<li>Jamaica: $37 / $56</li>
+<li>Sangría preparada: $45</li>
+<li>Agua mineral: $30</li>
+<li>Agua embotellada: $30</li>
+<li>Refrescos: $30</li>
+<li>Cerveza: $50</li>
+<li>Cerveza preparada: $57</li>
+</ul>
+</div>
+<div class="section-right">
+<img src="frías.jpg">
+<img src="cerveza.jpg">
+</div>
+</div>
+
+<div class="subcategory">Calientes</div>
+<div class="section-content">
+<div class="section-left">
+<ul>
+<li>Café de olla: $30</li>
+<li>Nescafé: $30</li>
+<li>Té: $30</li>
+</ul>
+</div>
+<div class="section-right">
+<img src="calientes.jpg">
+</div>
+</div>
+
+<div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+</div>
+
+<!-- POSTRES -->
+<div class="section" id="postres">
+<h2>Postres</h2>
+
+<div class="subcategory">Helados</div>
+<div class="section-content">
+<div class="section-left">
+<ul>
+<li>Fresas con crema</li>
+<li>Piña</li>
+<li>Manzana</li>
+<li>Mango</li>
+<li>Mamey</li>
+<li>Naranja</li>
+<li>Limón</li>
+<li>Coco</li>
+<li>Queso con zarzamora</li>
+<li>Beso de ángel</li>
+<li>Nuez</li>
+<li>Chongos zamoranos</li>
+</ul>
+</div>
+<div class="section-right">
+<img src="helados.jpg">
+</div>
+</div>
+
+<div class="subcategory">Pasteles</div>
+<div class="section-content">
+<div class="section-left">
+<ul>
+<li>Pastel de chocolate</li>
+<li>Pastel tres leches</li>
+<li>Pastel de zanahoria</li>
+<li>Pastel de queso</li>
+</ul>
+</div>
+<div class="section-right">
+<img src="pasteles.jpg">
+</div>
+</div>
+
+<div class="subcategory">Panqués</div>
+<div class="section-content">
+<div class="section-left">
+<ul>
+<li>Panqué de elote</li>
+<li>Panqué de naranja</li>
+<li>Panqué marmoleado</li>
+</ul>
+</div>
+<div class="section-right">
+<img src="panques.jpg">
+</div>
+</div>
+
+<div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+</div>
 
 <script>
 function scrollToSection(id){

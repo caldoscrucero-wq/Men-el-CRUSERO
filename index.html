@@ -1,322 +1,176 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menú El Crusero</title>
-
 <style>
-
-/* ===== GENERAL ===== */
+/* ===== ESTILO GENERAL ===== */
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #fef5e6;
+  background-color: #fef5e6; /* Fondo crema */
+  color: #3e2f1c; /* Café oscuro */
+}
+h2 {
+  font-family: 'Georgia', serif;
   color: #3e2f1c;
+  font-size: 2em;
+  margin: 0 0 20px 0;
+  position: relative;
+}
+h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 10px;
+  background: #3e2f1c;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
 }
 
-/* ===== ENCABEZADO ===== */
+/* ===== VIDEO ENCABEZADO ===== */
 .video-header {
-  position: relative;
-  width: 100%;
-  height: 350px;
-  overflow: hidden;
+position: relative;
+width: 100%;
+height: 450px;
+overflow: hidden;
 }
 .video-header video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+width: 100%;
+height: 100%;
+object-fit: cover;
 }
 .logo-header {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 120px;
+position: absolute;
+top: 10px;
+left: 10px;
+width: 120px;
 }
 .eslogan-header {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  font-size: 1.3em;
-  font-weight: bold;
-  color: white;
+position: absolute;
+bottom: 10px;
+left: 10px;
+font-size: 1.5em;
+font-weight: bold;
 }
 
-/* ===== BOTONES ===== */
+/* ===== BOTONES SCROLL ===== */
 .buttons-container {
-  display: flex;
-  overflow-x: auto;
-  background: #fff3e0;
-  padding: 12px;
+display: flex;
+overflow-x: auto;
+background: #fff3e0;
+padding: 10px 0;
 }
 .buttons-container button {
-  margin: 0 8px;
-  padding: 10px 18px;
-  background: #3e2f1c;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
+flex: 0 0 auto;
+margin: 0 10px;
+padding: 10px 20px;
+background-color: #3e2f1c;
+color: #fff;
+border: none;
+border-radius: 10px;
+cursor: pointer;
 }
 .buttons-container button:hover {
-  background: #6b4a2f;
+background-color: #5a3f28;
 }
 
-/* ===== TARJETAS ===== */
+/* ===== SECCIONES ===== */
 .section {
-  max-width: 1100px;
-  margin: 40px auto;
-  background: white;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
-
-h2 {
-  font-family: Georgia, serif;
-  margin-bottom: 20px;
-}
-
-/* ===== CONTENIDO ===== */
-.section-content {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+display: flex;
+flex-wrap: wrap;
+padding: 15px 20px;
+border-bottom: 2px solid #e0d6c4;
 }
 .section-left {
-  flex: 1;
+flex: 1 1 300px;
+padding-right: 20px;
 }
 .section-left ul {
-  padding-left: 18px;
+list-style: disc;
+padding-left: 20px;
 }
 .section-right {
-  flex: 1;
-  text-align: center;
+flex: 1 1 300px;
+text-align: center;
 }
 .section-right img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 12px;
-  margin-bottom: 10px;
+max-width: 100%;
+border-radius: 10px;
+margin-bottom: 10px;
 }
 
 /* ===== SUBCATEGORIAS ===== */
 .subcategory {
-  font-weight: bold;
-  margin: 20px 0 10px;
+font-weight: bold;
+margin: 20px 0 10px 0;
 }
 
-/* ===== POSTRES ===== */
+/* ===== POSTRES - GRID ===== */
 .postres-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 15px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+gap: 10px;
+justify-items: center;
+margin-bottom: 20px;
 }
 .postres-grid img {
-  width: 100%;
-  border-radius: 10px;
+width: 100px;
+border-radius: 10px;
 }
 .postres-grid span {
-  display: block;
-  text-align: center;
-  font-size: 14px;
+display: block;
+text-align: center;
+margin-top: 5px;
 }
 
 /* ===== AVISO ===== */
 .aviso {
-  background: #ffdd99;
-  margin-top: 20px;
-  padding: 12px;
-  text-align: center;
-  border-radius: 10px;
-  font-weight: bold;
+background-color: #ffdd99;
+padding: 15px;
+margin-top: 20px;
+text-align: center;
+font-weight: bold;
+border-radius: 10px;
 }
 
 /* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-  .section-content {
-    flex-direction: column;
-  }
+@media (max-width: 768px) {
+.section {
+flex-direction: column;
 }
+.section-left, .section-right {
+padding: 0;
+}
+} </style>
 
-</style>
 </head>
-
 <body>
 
-<!-- ENCABEZADO -->
+<!-- ===== ENCABEZADO ===== -->
+
 <div class="video-header">
   <video autoplay muted loop>
-    <source src="header.mp4">
+    <source src="header.mp4" type="video/mp4">
+    Tu navegador no soporta video.
   </video>
-  <img src="logo.png" class="logo-header">
+  <img src="logo.png" alt="Logo" class="logo-header">
   <div class="eslogan-header">Tradición desde 1994</div>
 </div>
 
-<!-- BOTONES -->
+<!-- ===== BOTONES ===== -->
+
 <div class="buttons-container">
-  <button onclick="go('caldos')">Caldos</button>
-  <button onclick="go('pancita')">Pancita</button>
-  <button onclick="go('chilaquiles')">Chilaquiles</button>
-  <button onclick="go('enchiladas')">Enchiladas</button>
-  <button onclick="go('asados')">Asados</button>
-  <button onclick="go('tacos')">Tacos</button>
-  <button onclick="go('infantil')">Infantil</button>
-  <button onclick="go('bebidas')">Bebidas</button>
-  <button onclick="go('postres')">Postres</button>
-</div>
-
-<!-- CALDOS -->
-<div class="section" id="caldos">
-<h2>Caldos</h2>
-<div class="section-content">
-<ul>
-<li>Chico: $45</li><li>Grande: $50</li><li>Pechuga entera: $220</li>
-<li>Pechuga 1/2: $110</li><li>Pechuga 1/4: $88</li>
-<li>Pierna: $88</li><li>Muslo: $88</li><li>Rabadilla: $88</li>
-<li>Huacal: $84</li><li>Alones: $72</li><li>Patas: $88</li>
-<li>Mollejas: $88</li><li>Cabezas: $75</li>
-</ul>
-<img src="caldo.jpg">
-</div>
-<div class="aviso">🔸 Revise su cuenta y cambio.</div>
-</div>
-
-<!-- PANCITA -->
-<div class="section" id="pancita">
-<h2>Pancita</h2>
-<div class="section-content">
-<ul>
-<li>Grande: $127</li>
-<li>Chico: $120</li>
-<li>Disponible fines y festivos</li>
-</ul>
-<img src="pancita.jpg">
-</div>
-</div>
-
-<!-- CHILAQUILES -->
-<div class="section" id="chilaquiles">
-<h2>Chilaquiles</h2>
-<div class="section-content">
-<ul>
-<li>Aguja norteña: $130</li>
-<li>Arrachera: $170</li>
-<li>Gallina: $125</li>
-<li>Costilla: $130</li>
-<li>Pechuga: $130</li>
-<li>Empanizada: $130</li>
-<li>Huevo: $120</li>
-<li>Sencillos: $90</li>
-</ul>
-<img src="chilaquiles.jpg">
-</div>
-</div>
-
-<!-- ENCHILADAS -->
-<div class="section" id="enchiladas">
-<h2>Enchiladas</h2>
-
-<div class="subcategory">Tradicionales</div>
-<ul>
-<li>Arrachera: $170</li>
-<li>Gallina: $125</li>
-<li>Costilla: $130</li>
-<li>Pechuga: $130</li>
-<li>Empanizada: $130</li>
-<li>Huevo: $120</li>
-<li>Sencillas: $90</li>
-</ul>
-
-<div class="subcategory">Suizas</div>
-<ul>
-<li>Arrachera: $185</li>
-<li>Gallina: $145</li>
-<li>Costilla: $160</li>
-<li>Pechuga: $160</li>
-<li>Empanizada: $160</li>
-</ul>
-
-<img src="enchiladas.jpg">
-</div>
-
-<!-- ASADOS -->
-<div class="section" id="asados">
-<h2>Asados</h2>
-<ul>
-<li>Arrachera: $170</li>
-<li>Pechuga: $135</li>
-<li>Costilla: $135</li>
-<li>Bistec: $135</li>
-<li>Incluye guarnición</li>
-</ul>
-<img src="asados.jpg">
-</div>
-
-<!-- TACOS -->
-<div class="section" id="tacos">
-<h2>Tacos</h2>
-<ul>
-<li>Todos: $50</li>
-<li>Dorados: $115</li>
-</ul>
-<img src="tacos dorados.jpg">
-</div>
-
-<!-- INFANTIL -->
-<div class="section" id="infantil">
-<h2>Menú Infantil</h2>
-<ul>
-<li>Tiritas: $95</li>
-<li>Nuggets: $95</li>
-<li>Hamburguesa: $95</li>
-</ul>
-<img src="hamburguesa.jpg">
-</div>
-
-<!-- BEBIDAS -->
-<div class="section" id="bebidas">
-<h2>Bebidas</h2>
-<ul>
-<li>Limonada: $45</li>
-<li>Naranjada: $45</li>
-<li>Refrescos: $30</li>
-<li>Cerveza: $50</li>
-</ul>
-<img src="frías.jpg">
-</div>
-
-<!-- POSTRES (YA CON TODO 👇) -->
-<div class="section" id="postres">
-<h2>Postres</h2>
-
-<div class="subcategory">Helados $68</div>
-<ul>
-<li>Fresa, mango, coco, nuez, zarzamora</li>
-</ul>
-
-<div class="subcategory">Pasteles $72</div>
-<div class="postres-grid">
-<div><img src="matilda.jpg"><span>Matilda</span></div>
-<div><img src="tortuga.jpg"><span>Tortuga</span></div>
-<div><img src="zanahoria.jpg"><span>Zanahoria</span></div>
-<div><img src="frambuesa.jpg"><span>Frambuesa</span></div>
-</div>
-
-<div class="subcategory">Panqués $38</div>
-<div class="postres-grid">
-<div><img src="chocolate.jpg"><span>Chocolate</span></div>
-<div><img src="vainilla.jpg"><span>Vainilla</span></div>
-<div><img src="frutos.jpg"><span>Frutos</span></div>
-</div>
-
-</div>
-
-<script>
-function go(id){
-  document.getElementById(id).scrollIntoView({behavior:'smooth'});
-}
-</script>
-
-</body>
-</html>
+  <button onclick="scrollToSection('caldos')">Caldos</button>
+  <button onclick="scrollToSection('pancita')">Pancita</button>
+  <button onclick="scrollToSection('chilaquiles')">Chilaquiles</button>
+  <button onclick="scrollToSection('enchiladas')">Enchiladas</button>
+  <button onclick="scrollToSection('asados')">Asados</button>
+  <button onclick="scrollToSection('tacos')">Tacos</button>
+  <button onclick="scrollToSection('infantil')">Menú infantil</button>
+  <button onclick="scrollToSection('bebidas')">Bebidas</button>
+  <button onclick="scrollToSection('

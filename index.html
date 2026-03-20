@@ -3,170 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menú El Crucero</title>
+<title>Menú El Crusero</title>
 <style>
+  /* ===== ESTILO GENERAL ===== */
   body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f5e6d3; /* Fondo crema */
+    font-family: Arial, sans-serif;
+    background-color: #f5e6d3; /* crema */
     color: #333;
   }
-  /* Encabezado */
-  .header {
+
+  /* ===== ENCABEZADO CON VIDEO ===== */
+  .video-header {
     position: relative;
     width: 100%;
     height: 400px;
     overflow: hidden;
   }
-  .header video {
+
+  .video-header video {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  .logo {
+
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .logo-superior {
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 120px;
+    width: 150px;
   }
+
   .eslogan {
     position: absolute;
     bottom: 10px;
     left: 10px;
-    font-size: 1.2rem;
-    color: #6b3f1d; /* café oscuro */
+    color: #4b2e2e;
+    font-size: 20px;
     font-weight: bold;
   }
-  /* Botones scroll */
-  .buttons-container {
+
+  /* ===== BOTONES SCROLL HORIZONTAL ===== */
+  .menu-buttons {
     display: flex;
     overflow-x: auto;
     white-space: nowrap;
     padding: 10px;
-    background: #fff3e0;
+    background-color: #f5e6d3;
   }
-  .buttons-container button {
+
+  .menu-buttons button {
+    flex: 0 0 auto;
     margin-right: 10px;
     padding: 10px 20px;
-    background-color: #6b3f1d;
-    color: #fff;
+    background-color: #4b2e2e;
+    color: white;
     border: none;
-    border-radius: 5px;
-    flex: 0 0 auto;
+    border-radius: 10px;
     cursor: pointer;
   }
-  /* Secciones */
-  section {
-    padding: 40px 20px;
+
+  /* ===== SECCIONES ===== */
+  .menu-section {
+    padding: 60px 20px;
+    margin-top: 30px;
+    border-top: 2px solid #d4bfa3;
+    background-color: #f5e6d3;
   }
-  .section-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #6b3f1d;
+
+  .menu-section h2 {
+    color: #4b2e2e; /* café oscuro */
+    font-family: 'Cursive', sans-serif;
+    font-size: 30px;
     margin-bottom: 20px;
-    display: inline-block;
-    position: relative;
   }
-  /* Forma ondeada simulada */
-  .section-title::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 10px;
-    background: #6b3f1d;
-    border-radius: 50% / 100%;
-    margin-top: 5px;
-  }
-  .section-content {
+
+  .menu-section .content {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
   }
-  .section-content .text {
-    flex: 1 1 300px;
+
+  .menu-section .text {
+    flex: 1;
   }
-  .section-content ul {
-    list-style: disc inside;
-    padding-left: 0;
+
+  .menu-section .text ul {
+    padding-left: 20px;
   }
-  .section-content .image {
-    flex: 1 1 300px;
-    text-align: center;
+
+  .menu-section .image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
-  .section-content .image img {
-    max-width: 100%;
-    border-radius: 10px;
-  }
-  /* Subcategorías */
-  .subcategory {
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-  /* Postres grid */
-  .postres-grid {
-    display: grid;
-    gap: 15px;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .postres-grid img {
+
+  .menu-section .image img {
     width: 100%;
     border-radius: 10px;
   }
-  /* Helados 2 columnas */
-  .helados-list {
-    column-count: 2;
-    column-gap: 20px;
-    margin-bottom: 10px;
+
+  /* ===== GRID POSTRES ===== */
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
-  .helados-list li {
-    break-inside: avoid;
+
+  .grid .item {
+    flex: 1 1 calc(33% - 10px);
+    text-align: center;
   }
-  /* Aviso final */
-  .aviso {
-    margin-top: 20px;
-    font-weight: bold;
-    color: #6b3f1d;
+
+  .grid .item img {
+    width: 100%;
+    border-radius: 10px;
   }
-  /* Responsive */
-  @media (max-width: 768px) {
-    .section-content {
+
+  /* ===== RESPONSIVE ===== */
+  @media screen and (max-width: 768px) {
+    .menu-section .content {
       flex-direction: column;
     }
-    .helados-list {
-      column-count: 1;
+    .grid .item {
+      flex: 1 1 100%;
     }
   }
 </style>
 </head>
 <body>
 
-<!-- Encabezado -->
-<div class="header">
-  <video src="video.mp4" autoplay muted loop></video>
-  <img src="logo.png" alt="Logo" class="logo">
-  <div class="eslogan">Tradición desde 1994</div>
-</div>
+<!-- ===== ENCABEZADO CON VIDEO ===== -->
+<header class="video-header">
+  <video autoplay muted loop>
+    <source src="video.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+  </video>
+  <div class="video-overlay">
+    <img src="logo.png" class="logo-superior" alt="Logo">
+    <div class="eslogan">Tradición desde 1994</div>
+  </div>
+</header>
 
-<!-- Botones -->
-<div class="buttons-container">
-  <button onclick="document.getElementById('caldos').scrollIntoView({behavior:'smooth'})">Caldos</button>
-  <button onclick="document.getElementById('pancita').scrollIntoView({behavior:'smooth'})">Pancita</button>
-  <button onclick="document.getElementById('chilaquiles').scrollIntoView({behavior:'smooth'})">Chilaquiles</button>
-  <button onclick="document.getElementById('enchiladas').scrollIntoView({behavior:'smooth'})">Enchiladas</button>
-  <button onclick="document.getElementById('asados').scrollIntoView({behavior:'smooth'})">Asados</button>
-  <button onclick="document.getElementById('tacos').scrollIntoView({behavior:'smooth'})">Tacos</button>
-  <button onclick="document.getElementById('infantil').scrollIntoView({behavior:'smooth'})">Menú infantil</button>
-  <button onclick="document.getElementById('bebidas').scrollIntoView({behavior:'smooth'})">Bebidas</button>
-  <button onclick="document.getElementById('postres').scrollIntoView({behavior:'smooth'})">Postres</button>
-</div>
+<!-- ===== BOTONES ===== -->
+<nav class="menu-buttons">
+  <button onclick="scrollToSection('caldos')">Caldos</button>
+  <button onclick="scrollToSection('pancita')">Pancita</button>
+  <button onclick="scrollToSection('chilaquiles')">Chilaquiles</button>
+  <button onclick="scrollToSection('enchiladas')">Enchiladas</button>
+  <button onclick="scrollToSection('asados')">Asados</button>
+  <button onclick="scrollToSection('tacos')">Tacos</button>
+  <button onclick="scrollToSection('infantil')">Menú infantil</button>
+  <button onclick="scrollToSection('bebidas')">Bebidas</button>
+  <button onclick="scrollToSection('postres')">Postres</button>
+</nav>
 
-<!-- Secciones -->
-<section id="caldos">
-  <div class="section-title">Caldos</div>
-  <div class="section-content">
+<!-- ===== SECCIONES ===== -->
+
+<section id="caldos" class="menu-section">
+  <h2>Caldos</h2>
+  <div class="content">
     <div class="text">
       <ul>
         <li>Chico: $45</li>
@@ -185,32 +190,33 @@
       </ul>
     </div>
     <div class="image">
-      <img src="caldos.jpg" alt="Caldos">
+      <img src="caldos.png" alt="Caldo">
     </div>
   </div>
-  <div class="aviso">Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+  <p>Favor de revisar su cuenta y su cambio. Solicite su ticket.</p>
 </section>
 
-<section id="pancita">
-  <div class="section-title">Pancita</div>
-  <div class="section-content">
+<section id="pancita" class="menu-section">
+  <h2>Pancita</h2>
+  <div class="content">
     <div class="text">
       <ul>
-        <li>Plato Grande: $127</li>
-        <li>Plato Chico: $120</li>
-        <li>(Disponibles solo viernes, sábado, domingo, lunes y días festivos)</li>
+        <!-- Agrega info de pancita aquí -->
+        <li>Plato grande: $127</li>
+        <li>Plato chico: $120</li>
+        <li>(Disponible solo viernes, sábados, domingos, lunes y días festivos)</li>
       </ul>
     </div>
     <div class="image">
-      <img src="pancita.jpg" alt="Pancita">
+      <img src="pancita.png" alt="Pancita">
     </div>
   </div>
-  <div class="aviso">Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+  <p>Favor de revisar su cuenta y su cambio. Solicite su ticket.</p>
 </section>
 
-<section id="chilaquiles">
-  <div class="section-title">Chilaquiles</div>
-  <div class="section-content">
+<section id="chilaquiles" class="menu-section">
+  <h2>Chilaquiles</h2>
+  <div class="content">
     <div class="text">
       <ul>
         <li>Aguja norteña: $130</li>
@@ -224,16 +230,17 @@
       </ul>
     </div>
     <div class="image">
-      <img src="chilaquiles.jpg" alt="Chilaquiles">
+      <img src="chilaquiles.png" alt="Chilaquiles">
     </div>
   </div>
-  <div class="aviso">Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+  <p>Favor de revisar su cuenta y su cambio. Solicite su ticket.</p>
 </section>
 
-<section id="enchiladas">
-  <div class="section-title">Enchiladas</div>
-  <div class="subcategory">Verde, Rojas y Mole</div>
-  <div class="section-content">
+<section id="enchiladas" class="menu-section">
+  <h2>Enchiladas</h2>
+
+  <strong>Verde, Rojas y Mole</strong>
+  <div class="content">
     <div class="text">
       <ul>
         <li>Arrachera: $170</li>
@@ -246,11 +253,12 @@
       </ul>
     </div>
     <div class="image">
-      <img src="enchiladas_verde.jpg" alt="Enchiladas Verde Rojas y Mole">
+      <img src="enchiladas1.png" alt="Enchiladas Verde/Rojas/Mole">
     </div>
   </div>
-  <div class="subcategory">Enchiladas Suizas</div>
-  <div class="section-content">
+
+  <strong>Enchiladas Suizas</strong>
+  <div class="content">
     <div class="text">
       <ul>
         <li>Arrachera: $185</li>
@@ -262,15 +270,15 @@
       </ul>
     </div>
     <div class="image">
-      <img src="enchiladas_suizas.jpg" alt="Enchiladas Suizas">
+      <img src="enchiladas2.png" alt="Enchiladas Suizas">
     </div>
   </div>
-  <div class="aviso">Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+  <p>Favor de revisar su cuenta y su cambio. Solicite su ticket.</p>
 </section>
 
-<section id="asados">
-  <div class="section-title">Asados</div>
-  <div class="section-content">
+<section id="asados" class="menu-section">
+  <h2>Asados</h2>
+  <div class="content">
     <div class="text">
       <ul>
         <li>Arrachera: $50</li>
@@ -283,131 +291,140 @@
       </ul>
     </div>
     <div class="image">
-      <img src="asados.jpg" alt="Asados">
+      <img src="asados.png" alt="Asados">
     </div>
   </div>
-  <div class="aviso">Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+  <p>Favor de revisar su cuenta y su cambio. Solicite su ticket.</p>
 </section>
 
-<section id="tacos">
-  <div class="section-title">Tacos</div>
-  <div class="section-content">
+<section id="tacos" class="menu-section">
+  <h2>Tacos</h2>
+  <div class="content">
     <div class="text">
       <ul>
         <li>Tiritas de pollo: $95</li>
         <li>Deditos de queso mozzarella: $95</li>
-        <li>Nuggets: $95</li>
+        <li>Nuggets: $95 (Incluye guarnición, papas y ensalada)</li>
         <li>Hamburguesas con papas: $95</li>
       </ul>
     </div>
     <div class="image">
-      <img src="tacos.jpg" alt="Tacos y menú infantil">
+      <img src="tiritas.png" alt="Tiritas de pollo">
+      <img src="hamburguesa.png" alt="Hamburguesa">
     </div>
   </div>
-  <div class="aviso">Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+  <p>Favor de revisar su cuenta y su cambio. Solicite su ticket.</p>
 </section>
 
-<section id="infantil">
-  <div class="section-title">Menú Infantil</div>
-  <div class="section-content">
+<section id="infantil" class="menu-section">
+  <h2>Menú Infantil</h2>
+  <div class="content">
     <div class="text">
       <ul>
         <li>Tiritas de pollo: $95</li>
         <li>Deditos de queso mozzarella: $95</li>
-        <li>Nuggets: $95</li>
+        <li>Nuggets: $95 (Incluye guarnición, papas y ensalada)</li>
         <li>Hamburguesas con papas: $95</li>
       </ul>
     </div>
     <div class="image">
-      <img src="tiritas.jpg" alt="Tiritas de pollo">
-      <img src="hamburguesa.jpg" alt="Hamburguesa">
+      <img src="tiritas.png" alt="Tiritas de pollo">
+      <img src="hamburguesa.png" alt="Hamburguesa">
     </div>
   </div>
-  <div class="aviso">Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+  <p>Favor de revisar su cuenta y su cambio. Solicite su ticket.</p>
 </section>
 
-<section id="bebidas">
-  <div class="section-title">Bebidas</div>
-  <div class="subcategory">Frías</div>
-  <div class="section-content">
+<section id="bebidas" class="menu-section">
+  <h2>Bebidas</h2>
+  <strong>Frías</strong>
+  <div class="content">
     <div class="text">
       <ul>
         <li>Limonada: $45</li>
         <li>Naranjada: $45</li>
-        <li>Agua de horchata: $37 (500ml) / $56 (900ml)</li>
-        <li>Agua de Jamaica: $37 (500ml) / $56 (900ml)</li>
+        <li>Agua de horchata: $37 (500 ml), $56 (900 ml)</li>
+        <li>Agua de Jamaica: $37 (500 ml), $56 (900 ml)</li>
         <li>Sangría preparada: $45</li>
         <li>Agua mineral: $30</li>
         <li>Agua embotellada: $30</li>
         <li>Refrescos: $30</li>
-        <li>Cerveza sola (355ml): $50</li>
-        <li>Cerveza preparada (355ml): $57</li>
+        <li>Cerveza sola (355 ml): $50</li>
+        <li>Cerveza preparada (355 ml): $57</li>
       </ul>
     </div>
     <div class="image">
-      <img src="bebidas_frias.jpg" alt="Bebidas frías">
-      <img src="cervezas.jpg" alt="Cervezas">
+      <img src="frias.png" alt="Bebidas frías">
+      <img src="cervezas.png" alt="Cervezas">
     </div>
   </div>
-  <div class="subcategory">Calientes</div>
-  <div class="section-content">
+
+  <strong>Calientes</strong>
+  <div class="content">
     <div class="text">
       <ul>
         <li>Café de olla: $30</li>
-        <li>Nescafé: $30</li>
+        <li>Nescafé</li>
         <li>Té (diversos sabores): $30</li>
       </ul>
     </div>
     <div class="image">
-      <img src="bebidas_calientes.jpg" alt="Bebidas calientes">
+      <img src="calientes.png" alt="Bebidas calientes">
     </div>
   </div>
-  <div class="aviso">Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+  <p>Favor de revisar su cuenta y su cambio. Solicite su ticket.</p>
 </section>
 
-<section id="postres">
-  <div class="section-title">Postres</div>
+<section id="postres" class="menu-section">
+  <h2>Postres</h2>
 
-  <div class="subcategory">Helados ARCE $68 c/u</div>
-  <div class="helados-list">
-    <ul>
-      <li>Fresas con crema</li>
-      <li>Piña</li>
-      <li>Manzana</li>
-      <li>Mango</li>
-      <li>Mamey</li>
-      <li>Naranja</li>
-      <li>Limón</li>
-      <li>Coco</li>
-      <li>Queso con zarzamora</li>
-      <li>Beso de ángel</li>
-      <li>Nuez</li>
-      <li>Chongos zamoranos</li>
-    </ul>
-  </div>
-  <div class="image">
-    <img src="helados.jpg" alt="Helados">
-  </div>
-
-  <div class="subcategory">Pasteles COSTCO $72 c/rebanada</div>
-  <div class="postres-grid">
-    <div><img src="matilda.jpg" alt="Matilda"><div>Matilda</div></div>
-    <div><img src="tortuga.jpg" alt="Tortuga"><div>Tortuga</div></div>
-    <div><img src="zanahoria.jpg" alt="Zanahoria"><div>Zanahoria</div></div>
-    <div><img src="frambuesa.jpg" alt="Frambuesa"><div>Frambuesa</div></div>
-    <div><img src="flan_imposible.jpg" alt="Flan imposible"><div>Flan imposible</div></div>
-    <div><img src="tarta_nuez.jpg" alt="Tarta de nuez"><div>Tarta de nuez</div></div>
+  <strong>Helados ARCE $68 c/u</strong>
+  <div class="content">
+    <div class="text">
+      <ul style="columns:2;">
+        <li>Fresas con crema</li>
+        <li>Piña</li>
+        <li>Manzana</li>
+        <li>Mango</li>
+        <li>Mamey</li>
+        <li>Naranja</li>
+        <li>Limón</li>
+        <li>Coco</li>
+        <li>Queso con zarzamora</li>
+        <li>Beso de ángel</li>
+        <li>Nuez</li>
+        <li>Chongos zamoranos</li>
+      </ul>
+    </div>
+    <div class="image">
+      <img src="helados.png" alt="Helados">
+    </div>
   </div>
 
-  <div class="subcategory">Panqués COSTCO $38 c/u</div>
-  <div class="postres-grid">
-    <div><img src="chocolate.jpg" alt="Chocolate"><div>Chocolate</div></div>
-    <div><img src="vainilla.jpg" alt="Vainilla"><div>Vainilla</div></div>
-    <div><img src="frutos_rojos.jpg" alt="Frutos rojos"><div>Frutos rojos</div></div>
+  <strong>Pasteles COSTCO $72 c/rebanada</strong>
+  <div class="grid">
+    <div class="item"><img src="matilda.png" alt="Matilda"><p>Matilda</p></div>
+    <div class="item"><img src="tortuga.png" alt="Tortuga"><p>Tortuga</p></div>
+    <div class="item"><img src="zanahoria.png" alt="Zanahoria"><p>Zanahoria</p></div>
+    <div class="item"><img src="frambuesa.png" alt="Frambuesa"><p>Frambuesa</p></div>
+    <div class="item"><img src="flan.png" alt="Flan imposible"><p>Flan imposible</p></div>
+    <div class="item"><img src="tarta.png" alt="Tarta de nuez"><p>Tarta de nuez</p></div>
   </div>
 
-  <div class="aviso">Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+  <strong>Panqués COSTCO $38 c/u</strong>
+  <div class="grid">
+    <div class="item"><img src="chocolate.png" alt="Chocolate"><p>Chocolate</p></div>
+    <div class="item"><img src="vainilla.png" alt="Vainilla"><p>Vainilla</p></div>
+    <div class="item"><img src="frutosrojos.png" alt="Frutos rojos"><p>Frutos rojos</p></div>
+  </div>
+  <p>Favor de revisar su cuenta y su cambio. Solicite su ticket.</p>
 </section>
+
+<script>
+  function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+  }
+</script>
 
 </body>
 </html>

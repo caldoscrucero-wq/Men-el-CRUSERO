@@ -5,41 +5,85 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menú El Crucero</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 
 /* GENERAL */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f5e6d3;
 }
 
-/* HEADER */
-header {
-    background: #5a3e2b;
-    color: white;
-    text-align: center;
-    padding: 20px;
+/* HEADER VIDEO */
+.header-video {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
 }
 
-/* BOTONES */
+.header-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* OVERLAY */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+}
+
+/* LOGO */
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 120px;
+    z-index: 2;
+}
+
+/* ESLOGAN */
+.eslogan {
+    position: absolute;
+    bottom: 70px;
+    left: 15px;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    z-index: 2;
+}
+
+/* BOTONES SCROLL */
 .menu-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    background: black;
-    padding: 10px;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 5px 10px;
+    z-index: 2;
+    scroll-behavior: smooth;
+}
+
+.menu-nav::-webkit-scrollbar {
+    display: none;
 }
 
 .menu-nav button {
-    background: #d62828;
+    display: inline-block;
+    background: #a4161a;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px 14px;
+    margin-right: 8px;
+    border-radius: 20px;
+    font-size: 13px;
     cursor: pointer;
-    border-radius: 8px;
-    font-weight: bold;
 }
 
 /* SECCIONES */
@@ -52,8 +96,9 @@ header {
     display: block;
 }
 
-/* TITULO */
+/* TITULOS */
 .titulo {
+    font-family: 'Playfair Display', serif;
     background: #5a3e2b;
     color: white;
     padding: 15px;
@@ -62,19 +107,11 @@ header {
     margin-bottom: 20px;
 }
 
-/* TARJETAS */
-.card {
-    background: white;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 12px;
-}
-
-/* FILA */
+/* FILAS */
 .fila {
     display: flex;
     gap: 15px;
-    align-items: center;
+    margin-bottom: 20px;
 }
 
 .texto { flex: 1; }
@@ -85,38 +122,25 @@ header {
     border-radius: 10px;
 }
 
-/* GRID GENERAL */
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 15px;
 }
 
-.item {
-    text-align: center;
-}
+.item { text-align: center; }
 
-.item img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* HELADOS 3 COLUMNAS */
+/* HELADOS */
 .helados-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    .fila {
-        flex-direction: column;
-    }
-
-    .helados-grid {
-        grid-template-columns: 1fr;
-    }
+    .fila { flex-direction: column; }
+    .helados-grid { grid-template-columns: 1fr; }
 }
 
 /* AVISO */
@@ -132,35 +156,45 @@ header {
 
 <body>
 
-<header>
-<h1>Menú El Crucero</h1>
-</header>
+<!-- HEADER -->
+<div class="header-video">
+
+<video autoplay muted loop>
+<source src="header.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<img src="logo.png" class="logo">
+
+<div class="eslogan">Tradición desde 1994</div>
 
 <div class="menu-nav">
 <button onclick="showSection('caldos')">Caldos</button>
 <button onclick="showSection('pancita')">Pancita</button>
 <button onclick="showSection('chilaquiles')">Chilaquiles</button>
-<button onclick="showSection('extras')">Extras</button>
+<button onclick="showSection('enchiladas')">Enchiladas</button>
+<button onclick="showSection('asados')">Asados</button>
+<button onclick="showSection('tacos')">Tacos</button>
+<button onclick="showSection('infantil')">Menú infantil</button>
 <button onclick="showSection('bebidas')">Bebidas</button>
 <button onclick="showSection('postres')">Postres</button>
+</div>
+
 </div>
 
 <!-- CALDOS -->
 <div id="caldos" class="section active">
 <div class="titulo">Caldos</div>
 
-<div class="card fila">
+<div class="fila">
 <div class="texto">
 <strong>Caldo solo</strong>
 <ul>
 <li>Chico: $45</li>
 <li>Grande: $50</li>
 </ul>
-</div>
-<div class="imagen"><img src="caldo.jpg"></div>
-</div>
 
-<div class="card">
 <strong>Piezas</strong>
 <ul>
 <li>Pechuga entera: $220</li>
@@ -172,9 +206,7 @@ header {
 <li>Huacal: $84</li>
 <li>Alones: $72</li>
 </ul>
-</div>
 
-<div class="card">
 <strong>Orden (según disponibilidad)</strong>
 <ul>
 <li>Patas: $88</li>
@@ -183,13 +215,17 @@ header {
 </ul>
 </div>
 
+<div class="imagen">
+<img src="caldo.jpg">
+</div>
+</div>
 </div>
 
 <!-- PANCITA -->
 <div id="pancita" class="section">
 <div class="titulo">Pancita</div>
 
-<div class="card fila">
+<div class="fila">
 <div class="texto">
 <ul>
 <li>Grande: $127</li>
@@ -197,121 +233,19 @@ header {
 </ul>
 <p><em>Disponible viernes, sábado, domingo, lunes y días festivos</em></p>
 </div>
-<div class="imagen"><img src="pancita.jpg"></div>
-</div>
-</div>
 
-<!-- CHILAQUILES -->
-<div id="chilaquiles" class="section">
-<div class="titulo">Chilaquiles</div>
-
-<div class="card fila">
-<div class="texto">
-<strong>Complementos</strong>
-<ul>
-<li>Aguja norteña: $130</li>
-<li>Arrachera: $170</li>
-<li>Carne de gallina: $125</li>
-<li>Costilla: $130</li>
-<li>Pechuga asada: $130</li>
-<li>Pechuga empanizada: $130</li>
-<li>Huevo: $120</li>
-<li>Sencillos: $90</li>
-</ul>
+<div class="imagen">
+<img src="pancita.jpg">
 </div>
-<div class="imagen"><img src="chilaquiles.jpg"></div>
 </div>
-
-<div class="card fila">
-<div class="texto">
-<strong>Verde, Rojas y Mole</strong>
-<ul>
-<li>Arrachera: $170</li>
-<li>Carne de gallina: $125</li>
-<li>Costilla: $130</li>
-<li>Pechuga asada: $130</li>
-<li>Pechuga empanizada: $130</li>
-<li>Huevo: $120</li>
-<li>Sencillas: $90</li>
-</ul>
-</div>
-<div class="imagen"><img src="enmoladas.jpg"></div>
-</div>
-
-<div class="card fila">
-<div class="texto">
-<strong>Enchiladas Suizas</strong>
-<ul>
-<li>Arrachera: $185</li>
-<li>Carne de gallina: $145</li>
-<li>Costilla: $160</li>
-<li>Pechuga asada: $160</li>
-<li>Pechuga empanizada: $160</li>
-<li>Sencillas: $90</li>
-</ul>
-</div>
-<div class="imagen"><img src="enchiladas.jpg"></div>
-</div>
-
-</div>
-
-<!-- EXTRAS -->
-<div id="extras" class="section">
-<div class="titulo">Extras</div>
-
-<div class="card fila">
-<div class="texto">
-<strong>Variedad de carnes</strong>
-<ul>
-<li>Arrachera: $170</li>
-<li>Pechuga: $135</li>
-<li>Costilla: $135</li>
-<li>Bistec: $135</li>
-<li>Pechuga empanizada: $135</li>
-<li>Aguja norteña: $135</li>
-</ul>
-<p>Incluye guarnición, ensalada, y chilaquiles</p>
-</div>
-<div class="imagen"><img src="asados.jpg"></div>
-</div>
-
-<div class="card fila">
-<div class="texto">
-<ul>
-<li>Arrachera: $50</li>
-<li>Pechuga asada: $50</li>
-<li>Costilla asada: $50</li>
-<li>Bistec asado: $50</li>
-<li>Pechuga empanizada: $50</li>
-<li>Aguja norteña: $50</li>
-<li>Tacos dorados: $115</li>
-</ul>
-</div>
-<div class="imagen"><img src="tacos dorados.jpg"></div>
-</div>
-
-<div class="card fila">
-<div class="texto">
-<ul>
-<li>Tiritas de pollo: $95</li>
-<li>Deditos de queso mozzarella: $95</li>
-<li>Nuggets: $95</li>
-<li>Hamburguesas con papas: $95</li>
-</ul>
-<p>Incluye guarnición, papas y ensalada</p>
-</div>
-<div class="imagen"><img src="tiritas.jpg"></div>
-</div>
-
 </div>
 
 <!-- BEBIDAS -->
 <div id="bebidas" class="section">
 <div class="titulo">Bebidas</div>
 
-<div class="card fila">
+<div class="fila">
 <div class="texto">
-<strong>Frías</strong>
 <ul>
 <li>Limonada: $45</li>
 <li>Naranjada: $45</li>
@@ -322,31 +256,11 @@ header {
 <li>Refrescos: $30</li>
 </ul>
 </div>
-<div class="imagen"><img src="frías.jpg"></div>
-</div>
 
-<div class="card fila">
-<div class="texto">
-<strong>Cerveza</strong>
-<ul>
-<li>Sola: $50</li>
-<li>Preparada: $57</li>
-</ul>
+<div class="imagen">
+<img src="bebidas.jpg">
 </div>
-<div class="imagen"><img src="cerveza.jpg"></div>
 </div>
-
-<div class="card fila">
-<div class="texto">
-<strong>Calientes</strong>
-<ul>
-<li>Café de olla: $30</li>
-<li>Té: $30</li>
-</ul>
-</div>
-<div class="imagen"><img src="calientes.jpg"></div>
-</div>
-
 </div>
 
 <!-- POSTRES -->
@@ -354,7 +268,7 @@ header {
 <div class="titulo">Postres</div>
 
 <!-- HELADOS -->
-<div class="card">
+<div>
 <strong>Helados ARCE $68 c/u</strong>
 
 <div class="helados-grid">
@@ -377,11 +291,11 @@ header {
 </ul>
 </div>
 
-<img src="helados.jpg" style="width:100%; margin-top:10px; border-radius:10px;">
+<img src="helados.jpg" style="width:100%; border-radius:10px;">
 </div>
 
 <!-- PASTELES -->
-<div class="card">
+<div>
 <strong>Pasteles COSTCO $72</strong>
 
 <div class="grid">
@@ -395,7 +309,7 @@ header {
 </div>
 
 <!-- PANQUES -->
-<div class="card">
+<div>
 <strong>Panqués $38</strong>
 
 <div class="grid">
@@ -408,7 +322,7 @@ header {
 </div>
 
 <div class="aviso">
-🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.
+Favor de revisar su cuenta y su cambio. Solicite su ticket.
 </div>
 
 <script>

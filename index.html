@@ -21,14 +21,30 @@ h2 {
   margin-bottom: 25px;
   position: relative;
 }
-h2::after {
-  content: "";
-  width: 80px;
-  height: 5px;
-  background: #c89b3c;
-  display: block;
-  margin-top: 8px;
+    .titulo-seccion {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.linea-talavera {
+  width: 100px;
+  height: 6px;
+  margin: 0 auto 20px auto;
   border-radius: 10px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #1f4e5f,
+    #1f4e5f 10px,
+    #f2a65a 10px,
+    #f2a65a 20px
+  );
+}
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #5a2e0c;
 }
 
 /* ===== HEADER ===== */
@@ -309,7 +325,8 @@ h2::after {
 
 <!-- Caldos -->
 <div class="section" id="caldos">
-  <h2>Caldos</h2>
+  <h2 class="titulo-seccion">Caldos</h2>
+<div class="linea-talavera"></div>
   <div class="section-left">
     <ul>
       <li>Chico: $45</li>

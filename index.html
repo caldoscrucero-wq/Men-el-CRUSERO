@@ -4,33 +4,163 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menú El Crusero</title>
-<style>
-/* ===== ESTILO GENERAL ===== */
+/* ===== GENERAL ===== */
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #fef5e6; /* Fondo crema */
-  color: #3e2f1c; /* Café oscuro */
+  background: linear-gradient(to bottom, #fef5e6, #fffaf2);
+  color: #3e2f1c;
 }
+
+/* ===== TITULOS ===== */
 h2 {
   font-family: 'Georgia', serif;
-  color: #3e2f1c;
   font-size: 2em;
-  margin: 0 0 20px 0;
+  margin-bottom: 25px;
   position: relative;
 }
 h2::after {
   content: "";
+  width: 80px;
+  height: 5px;
+  background: #c89b3c;
   display: block;
-  width: 100px;
-  height: 10px;
-  background: #3e2f1c;
-  border-radius: 50%;
-  position: absolute;
-  left: 0;
-  bottom: -10px;
+  margin-top: 8px;
+  border-radius: 10px;
 }
 
+/* ===== HEADER ===== */
+.video-header {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+}
+.video-header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  top: 0;
+}
+.video-header video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.logo-header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 120px;
+  z-index: 2;
+}
+.eslogan-header {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 1.6em;
+  color: white;
+  font-weight: bold;
+  z-index: 2;
+}
+
+/* ===== BOTONES ===== */
+.buttons-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 15px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.buttons-container button {
+  margin: 0 8px;
+  padding: 10px 20px;
+  background: #3e2f1c;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.buttons-container button:hover {
+  background: #c89b3c;
+  transform: scale(1.05);
+}
+
+/* ===== SECCIONES (TARJETAS) ===== */
+.section {
+  margin: 30px auto;
+  max-width: 1100px;
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+.section:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== CONTENIDO ===== */
+.section-left ul {
+  line-height: 1.8;
+}
+
+/* ===== IMAGENES ===== */
+.section-right img {
+  border-radius: 15px;
+  transition: 0.4s;
+}
+.section-right img:hover {
+  transform: scale(1.08);
+}
+
+/* ===== SUBCATEGORIAS ===== */
+.subcategory {
+  font-weight: bold;
+  margin-top: 25px;
+  color: #c89b3c;
+}
+
+/* ===== POSTRES ===== */
+.postres-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+.postres-grid div {
+  text-align: center;
+}
+.postres-grid img {
+  width: 100%;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+.postres-grid img:hover {
+  transform: scale(1.1);
+}
+.postres-grid span {
+  margin-top: 5px;
+  display: block;
+}
+
+/* ===== AVISO ===== */
+.aviso {
+  background: linear-gradient(45deg, #ffd27f, #ffb347);
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:768px){
+  .section {
+    margin: 20px 10px;
+  }
+}
 /* ===== VIDEO ENCABEZADO ===== */
 .video-header {
   position: relative;

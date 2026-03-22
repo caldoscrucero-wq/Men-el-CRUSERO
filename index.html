@@ -96,9 +96,7 @@ font-family: 'Playfair Display', serif;
 
     /* ===== HEADER ===== */
 .video-header {
-  position: relative;
-  height: 220px;
-  overflow: hidden;
+  height: 220px !important;
 }
 .video-header::after {
   content: "";
@@ -108,10 +106,11 @@ font-family: 'Playfair Display', serif;
   background: rgba(0,0,0,0.3);
   top: 0;
 }
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
   .video-header {
-    height: 180px;
+    height: 180px !important;
   }
+}
 
   .eslogan-header {
     font-size: 1.2em;

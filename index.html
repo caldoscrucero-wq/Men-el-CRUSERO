@@ -59,6 +59,13 @@ h2 {
   height: 220px;
   overflow: hidden;
 }
+
+.video-header video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .video-header::after {
   content: "";
   position: absolute;
@@ -67,81 +74,40 @@ h2 {
   background: rgba(0,0,0,0.3);
   top: 0;
 }
-    
-.video-header video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+
+/* LOGO */
 .logo-header {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 120px;
+  top: 10px;
+  left: 10px;
+  width: 90px;
   z-index: 2;
 }
+
+/* ESLOGAN */
 .eslogan-header {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  font-size: 1.6em;
+  bottom: 12px;
+  left: 10px;
+
+  font-size: 1.1em;
   color: white;
-  font-weight: bold;
   z-index: 2;
-font-family: 'Playfair Display', serif;
+
+  font-family: 'Playfair Display', serif;
   font-style: italic;
   font-weight: 400;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
+
+  text-shadow: 0px 2px 6px rgba(0,0,0,0.4);
 }
 
-    /* ===== HEADER ===== */
-.video-header {
-  height: 220px !important;
-}
-.video-header::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.3);
-  top: 0;
-}
+/* 📱 MOBILE */
 @media (max-width: 768px) {
   .video-header {
-    height: 180px !important;
-  }
-}
-
-  .eslogan-header {
-    font-size: 1.2em;
+    height: 180px;
   }
 
-  .logo-header {
-    width: 90px;
-  }
-}
-.video-header video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.logo-header {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 120px;
-  z-index: 2;
-}
-.eslogan-header {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  font-size: 1.6em;
-  color: white;
-  font-weight: bold;
-  z-index: 2;
-}
-    @media (max-width: 768px) {
   .logo-header {
     width: 70px;
   }
@@ -150,35 +116,6 @@ font-family: 'Playfair Display', serif;
     font-size: 0.95em;
     bottom: 10px;
   }
-}
-    <section class="intro-menu">
-  <h1 class="titulo-menu">MENÚ</h1>
-  <div class="linea-talavera"></div>
-  <p class="subtitulo-menu">Tradición desde 1994</p>
-</section>
-
-<div class="botones-menu">
-    .intro-menu {
-  text-align: center;
-  padding: 35px 20px 15px;
-  background-color: #f5efe6; /* tu crema */
-}
-
-.titulo-menu {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  color: #5a2e0c;
-  letter-spacing: 4px;
-  margin-bottom: 5px;
-}
-
-.subtitulo-menu {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1.1em;
-  color: #8b1e3f;
-  margin-top: 8px;
-  letter-spacing: 1px;
 }
 /* ===== BOTONES ===== */
 .buttons-container {

@@ -43,14 +43,21 @@ h2 {
   border-radius: 2px;
 }
 .linea-talavera {
-  width: 160px;
-  height: 10px;
-  margin: 6px auto 25px auto;
-  background-image: url('https://www.transparenttextures.com/patterns/azulejos.png');
-  background-size: contain;
-  background-repeat: repeat-x;
-  opacity: 0.6;
-  border-radius: 4px;
+  width: 140px;
+  height: 8px;
+  margin: 10px auto 25px auto;
+
+  background: repeating-linear-gradient(
+    45deg,
+    #5a2e0c,     /* café */
+    #5a2e0c 10px,
+    #8b1e3f 10px, /* vino */
+    #8b1e3f 20px,
+    #d97a2b 20px, /* naranja */
+    #d97a2b 30px
+  );
+
+  border-radius: 6px;
 }
 
 /* ===== HEADER ===== */

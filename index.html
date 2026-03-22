@@ -43,21 +43,19 @@ h2 {
   border-radius: 2px;
 }
 .linea-talavera {
-  width: 140px;
-  height: 8px;
-  margin: 10px auto 25px auto;
+  width: 110px;
+  height: 6px;
+  margin: 10px auto 22px auto;
 
-  background: repeating-linear-gradient(
-    45deg,
-    #5a2e0c,     /* café */
-    #5a2e0c 10px,
-    #8b1e3f 10px, /* vino */
-    #8b1e3f 20px,
-    #d97a2b 20px, /* naranja */
-    #d97a2b 30px
-  );
+  background:
+    radial-gradient(circle at 10px 50%, #8b1e3f 2px, transparent 3px),
+    radial-gradient(circle at 30px 50%, #d97a2b 2px, transparent 3px),
+    radial-gradient(circle at 50px 50%, #5a2e0c 2px, transparent 3px);
 
-  border-radius: 6px;
+  background-repeat: repeat-x;
+  background-size: 60px 6px;
+
+  opacity: 0.7;
 }
 
 /* ===== HEADER ===== */

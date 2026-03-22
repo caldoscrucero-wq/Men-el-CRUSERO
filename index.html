@@ -33,29 +33,24 @@ h2 {
   padding-bottom: 12px;
 }
 
-.titulo-con-linea::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 2px;
-  margin: 6px auto 0;
-  background: linear-gradient(to right, transparent, #caa85c, transparent);
-  border-radius: 2px;
-}
 .linea-talavera {
-  width: 110px;
+  width: 120px;
   height: 6px;
   margin: 10px auto 22px auto;
 
-  background:
-    radial-gradient(circle at 10px 50%, #8b1e3f 2px, transparent 3px),
-    radial-gradient(circle at 30px 50%, #d97a2b 2px, transparent 3px),
-    radial-gradient(circle at 50px 50%, #5a2e0c 2px, transparent 3px);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #8b1e3f,
+    #d97a2b,
+    #5a2e0c,
+    #d97a2b,
+    #8b1e3f,
+    transparent
+  );
 
-  background-repeat: repeat-x;
-  background-size: 60px 6px;
-
-  opacity: 0.7;
+  border-radius: 10px;
+  opacity: 0.85;
 }
 
 /* ===== HEADER ===== */

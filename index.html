@@ -9,11 +9,16 @@
  
   <style>
 /* ===== GENERAL ===== */
-body {
+html, body {
+  margin: 0;
+  padding: 0;
+}
+    body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(to bottom, #4b2e2e, #2e1b1b);
   color: #3e2f1c;
+  overflow-x: hidden; /* 👈 evita desplazamientos raros 
 }
 
 /* ===== TITULOS ===== */
@@ -160,6 +165,7 @@ section {
   .hero {
   position: relative;
   height: 100vh;
+   width: 100%;
   overflow: hidden;
 }
 
@@ -176,7 +182,7 @@ section {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   color: white;
   text-align: center;
@@ -192,13 +198,15 @@ section {
 }
 
 .overlay p {
-  margin-top: 60px;
+  margin: 0;
+  margin-bottom: 10px;
   font-style: italic;
 }
 
 .overlay h1 {
   margin: 0;
   margin-bottom: 10px;
+  margin-top: 20px; 
   font-size: 38px;
 }
 
@@ -207,7 +215,9 @@ section {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  margin-bottom: 20px;
+
+  margin-top: 10px;
+  margin-bottom: 60px;
 }
 
 .botones button {

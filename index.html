@@ -373,29 +373,23 @@ section {
 }
 
 /* ===== POSTRES - GRID ===== */
-#postres .postres-grid {
+.postres-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* columnas más grandes */
-  gap: 10px; /* menos espacio entre imágenes */
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* imágenes un poco más grandes */
+  gap: 10px 15px; /* 10px vertical, 15px horizontal */
 }
-
-#postres .postres-grid div {
+.postres-grid div {
   text-align: center;
 }
-
-#postres .postres-grid img {
+.postres-grid img {
   width: 100%;
-  max-width: 180px; /* ajusta a tu gusto */
-  height: auto;
   border-radius: 12px;
   transition: 0.3s;
 }
-
-#postres .postres-grid img:hover {
+.postres-grid img:hover {
   transform: scale(1.1);
 }
-
-#postres .postres-grid span {
+.postres-grid span {
   margin-top: 5px;
   display: block;
 }

@@ -112,24 +112,52 @@ h2 {
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
+
   color: white;
   text-align: center;
-  background: rgba(0,0,0,0.3);
-  padding: 0 20px;
+
+  /* 👇 estilo pro */
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
+
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+
+  margin: 15px;
+  padding: 0 20px 50px;
 }
 
 .logo-hero {
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 120px;
+  width: 155px; /* 👈 +30% como querías */
+
+  background: #f5efe6; /* 👈 tono crema elegante */
+  padding: 8px 12px;
+
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.25);
 }
 
 .overlay p {
   position: absolute;
-  top: 20px;
-  right: 20px;
-   font-size: 14px;
+  top: 30px;
+  right: 40px; /* 👈 lo separamos del borde */
+  margin: 0;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+
+  color: #f5e6d3; /* 👈 tono más cálido, no blanco plano */
+  text-align: right;
+  max-width: 200px; /* 👈 evita que se estire feo */
+
+  line-height: 1.3;
+
+  text-shadow: 0px 2px 8px rgba(0,0,0,0.6);
 }
 
   font-family: 'Playfair Display', serif;

@@ -1,450 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menú El Crusero</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
- 
-  <style>
-/* ===== GENERAL ===== */
-html, body {
-  margin: 0;
-  padding: 0;
-   height: 100%;
-}
-    body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #4b2e2e, #2e1b1b);
-  color: #3e2f1c;
-  overflow-x: hidden; 
-    }
-
-/* ===== TITULOS ===== */
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 34px;
-  text-align: center;
-  color: #5a2e0c;
-  letter-spacing: 3px;
-  margin: 0;
-}
-    .titulo-seccion {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-   .titulo-con-linea {
-  position: relative;
-  padding-bottom: 12px;
-}
-
-.linea-talavera {
-  width: 160px; /* un poquito más larga */
-  height: 6px;
-  margin: 4px auto 18px auto; /* más pegada al título */
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #8b1e3f,
-    #d97a2b,
-    #5a2e0c,
-    #d97a2b,
-    #8b1e3f,
-    transparent
-  );
-
-  border-radius: 10px;
-  opacity: 0.85;
-}
-
-/* ===== BOTONES ===== */
-.buttons-container {
-  display: flex;
-  overflow-x: auto;
-  padding: 25px 15px 10px;
-  background: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-.buttons-container button {
-  margin: 0 8px;
-  padding: 10px 20px;
-  background: #3e2f1c;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.buttons-container button:hover {
-  background: #c89b3c;
-  transform: scale(1.05);
-}
-
-  .hero {
-  position: relative;
-  height: 100dvh;
-  width: 100%;
-  overflow: hidden;
-  margin-top: 0;
-  top: 0;
-    
-}
-
-.video-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.overlay {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 10px;
-
-  color: white;
-  text-align: center;
-
-  /* 👇 estilo pro */
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(4px);
-
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 20px;
-
-  margin: 15px;
-  padding: 0 20px 50px;
-}
-
-.logo-hero {
-  position: absolute;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 130px; /* 👈 más equilibrado */
-  
-  background: #f5efe6;
-  padding: 6px 10px;
-
-  border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.25);
-  border: 1px solid rgba(0,0,0,0.08);
-}
-
-.overlay p {
-  position: absolute;
-  top: 110px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  margin: 0;
-
-  font-family: 'Playfair Display', serif;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-
-  color: #f5e6d3;
-  text-align: center;
-
-  line-height: 1.3;
-  text-shadow: 0px 2px 8px rgba(0,0,0,0.6);
-}
-.overlay h1 {
-  margin: 0;
-  margin-bottom: 10px;
-  margin-top: 15px; 
-  font-size: 38px;
-  order: 2;
-}
-
-.botones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-justify-content: center;
-padding-bottom: 60px;
-
-  margin-top: 10px;
-  margin-bottom: 0px;
-  order: 3;
-}
-
-.botones button {
-  padding: 10px 15px;
-  border-radius: 20px;
-  border: none;
-  background: #3e2f1c;
-  color: white;
-}
-.intro-menu {
-  padding: 15px 20px 5px;
-}
-
-.botones-menu {
-  margin-bottom: 10px;
-}
-
-section {
-  margin-top: 30px;
-}
-    
-/* ===== SECCIONES (TARJETAS) ===== */
-.section {
-  margin: 30px auto;
-  max-width: 1100px;
-  background: #fff4e6; /* 👈 ESTE ES EL CREMA */
-  border-radius: 20px;
-  padding: 25px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  transition: 0.3s;
-}
-.section:hover {
-  transform: translateY(-5px);
-}
-
-.volver-menu {
-  width: 100%;
-  text-align: center;
-  margin: 15px 0 0 0;
-}
-
-.volver-menu button {
-  padding: 10px 20px;
-  background-color: #3e2f1c;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.volver-menu button:hover {
-  background-color: #c89b3c;
-  transform: scale(1.05);
-}    
-/* ===== CONTENIDO ===== */
-.section-left ul {
-  line-height: 1.8;
-}
-
-/* ===== IMAGENES ===== */
-.section-right img {
-  border-radius: 15px;
-  transition: 0.4s;
-}
-.section-right img:hover {
-  transform: scale(1.08);
-}
-
-/* ===== SUBCATEGORIAS ===== */
-.subcategory {
-  font-weight: bold;
-  margin-top: 25px;
-  color: #c89b3c;
-}
-
-/* ===== POSTRES ===== */
-.postres-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 15px;
-}
-.postres-grid div {
-  text-align: center;
-}
-.postres-grid img {
-  width: 100%;
-  border-radius: 12px;
-  transition: 0.3s;
-}
-.postres-grid img:hover {
-  transform: scale(1.1);
-}
-.postres-grid span {
-  margin-top: 5px;
-  display: block;
-}
-
-/* ===== AVISO ===== */
-.aviso {
-  background: linear-gradient(45deg, #ffd27f, #ffb347);
-  padding: 12px;
-  border-radius: 10px;
-  margin-top: 20px;
-  text-align: center;
-  font-weight: bold;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width:768px){
-  .section {
-    margin: 20px 10px;
-  }
-}
-/* ===== VIDEO ENCABEZADO ===== */
-.video-header {
-  position: relative;
-  width: 100%;
-  height: 450px;
-  overflow: hidden;
-}
-.video-header video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.logo-header {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 120px;
-}
-.eslogan-header {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-/* ===== BOTONES SCROLL ===== */
-.buttons-container {
-  display: flex;
-  overflow-x: auto;
-  background: #fff3e0;
-  padding: 10px 0;
-}
-.buttons-container button {
-  flex: 0 0 auto;
-  margin: 0 10px;
-  padding: 10px 20px;
-  background-color: #3e2f1c;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.buttons-container button:hover {
-  background-color: #5a3f28;
-}
-
-/* ===== SECCIONES ===== */
-.section {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 15px 20px;
-  border-bottom: 2px solid #e0d6c4;
-}
-.section-left {
-  flex: 1 1 300px;
-  padding-right: 20px;
-}
-.section-left ul {
-  list-style: disc;
-  padding-left: 20px;
-}
-.section-right {
-  flex: 1 1 300px;
-  text-align: center;
-}
-.section-right img {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-/* ===== SUBCATEGORIAS ===== */
-.subcategory {
-  font-weight: bold;
-  margin: 20px 0 10px 0;
-}
-
-/* ===== POSTRES - GRID ===== */
-.postres-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 10px;
-  justify-items: center;
-  margin-bottom: 20px;
-}
-.postres-grid img {
-  width: 100px;
-  border-radius: 10px;
-}
-.postres-grid span {
-  display: block;
-  text-align: center;
-  margin-top: 5px;
-}
-
-/* ===== AVISO ===== */
-.aviso {
-  background-color: #ffdd99;
-  padding: 15px;
-  margin-top: 20px;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 10px;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .section {
-    flex-direction: column;
-  }
-  .section-left, .section-right {
-    padding: 0;
-  }
-}
-</style>
+<title>Menú</title>
+<link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-<section class="hero" id="hero">
-  <video autoplay muted loop class="video-bg">
-    <source src="header.mp4" type="video/mp4">
-  </video>
-
-  <div class="overlay">
-    <img src="logo.png" class="logo-hero">
-
-    <h1>Menú</h1>
-    <p>Tradición desde 1994</p>
-
-    <div class="botones">
-      <button onclick="scrollToSection('caldos')">Caldos</button>
-      <button onclick="scrollToSection('pancita')">Pancita</button>
-      <button onclick="scrollToSection('chilaquiles')">Chilaquiles</button>
-      <button onclick="scrollToSection('enchiladas')">Enchiladas</button>
-      <button onclick="scrollToSection('asados')">Asados</button>
-      <button onclick="scrollToSection('tacos')">Tacos</button>
-      <button onclick="scrollToSection('infantil')">Infantil</button>
-      <button onclick="scrollToSection('bebidas')">Bebidas</button>
-      <button onclick="scrollToSection('postres')">Postres</button>
-    </div>
+<!-- Portada -->
+<div class="section" id="hero">
+  <h1>Bienvenido a nuestro Menú</h1>
+  <p>Disfruta de nuestras deliciosas opciones</p>
+  <div class="menu-botones">
+    <button onclick="scrollToSection('caldos')">Caldos</button>
+    <button onclick="scrollToSection('pancita')">Pancita</button>
+    <button onclick="scrollToSection('chilaquiles')">Chilaquiles</button>
+    <button onclick="scrollToSection('enchiladas')">Enchiladas</button>
+    <button onclick="scrollToSection('asados')">Asados</button>
+    <button onclick="scrollToSection('tacos')">Tacos</button>
+    <button onclick="scrollToSection('infantil')">Menú Infantil</button>
+    <button onclick="scrollToSection('bebidas')">Bebidas</button>
+    <button onclick="scrollToSection('postres')">Postres</button>
   </div>
-</section>
+</div>
 
-<!-- ===== SECCIONES ===== -->
+<!-- Secciones -->
 
 <!-- Caldos -->
 <div class="section" id="caldos">
   <h2 class="titulo-seccion titulo-con-linea">Caldos</h2>
   <div class="linea-talavera"></div>
-
   <div class="section-left">
     <ul>
       <li>Chico: $45</li>
@@ -465,15 +51,15 @@ section {
   <div class="section-right">
     <img src="caldo.jpg" alt="Caldo">
   </div>
- 
+  <div class="volver-menu">
+    <button onclick="scrollToSection('hero')">← Volver al Menú</button>
+  </div>
 </div>
-
 
 <!-- Pancita -->
 <div class="section" id="pancita">
   <h2 class="titulo-seccion titulo-con-linea">Pancita</h2>
   <div class="linea-talavera"></div>
-
   <div class="section-left">
     <ul>
       <li>Grande: $127</li>
@@ -481,11 +67,9 @@ section {
       <li>(Disponibles solo viernes, sábados, domingo, lunes y días festivos)</li>
     </ul>
   </div>
-
   <div class="section-right">
     <img src="pancita.jpg" alt="Pancita">
   </div>
- 
   <div class="volver-menu">
     <button onclick="scrollToSection('hero')">← Volver al Menú</button>
   </div>
@@ -495,7 +79,6 @@ section {
 <div class="section" id="chilaquiles">
   <h2 class="titulo-seccion titulo-con-linea">Chilaquiles</h2>
   <div class="linea-talavera"></div>
-
   <div class="section-left">
     <ul>
       <li>Aguja norteña: $130</li>
@@ -508,16 +91,14 @@ section {
       <li>Sencillos: $90</li>
     </ul>
   </div>
-
   <div class="section-right">
     <img src="chilaquiles.jpg" alt="Chilaquiles">
   </div>
-
   <div class="volver-menu">
     <button onclick="scrollToSection('hero')">← Volver al Menú</button>
   </div>
 </div>
-  
+
 <!-- Enchiladas -->
 <div class="section" id="enchiladas">
   <h2 class="titulo-seccion titulo-con-linea">Enchiladas</h2>
@@ -563,7 +144,6 @@ section {
 <div class="section" id="asados">
   <h2 class="titulo-seccion titulo-con-linea">Asados</h2>
   <div class="linea-talavera"></div>
-
   <div class="section-left">
     <ul>
       <li>Arrachera: $170</li>
@@ -578,7 +158,6 @@ section {
   <div class="section-right">
     <img src="asados.jpg" alt="Asados">
   </div>
-
   <div class="volver-menu">
     <button onclick="scrollToSection('hero')">← Volver al Menú</button>
   </div>
@@ -588,7 +167,6 @@ section {
 <div class="section" id="tacos">
   <h2 class="titulo-seccion titulo-con-linea">Tacos</h2>
   <div class="linea-talavera"></div>
-
   <div class="section-left">
     <ul>
       <li>Arrachera: $50</li>
@@ -603,7 +181,6 @@ section {
   <div class="section-right">
     <img src="tacos dorados.jpg" alt="Tacos">
   </div>
-
   <div class="volver-menu">
     <button onclick="scrollToSection('hero')">← Volver al Menú</button>
   </div>
@@ -613,7 +190,6 @@ section {
 <div class="section" id="infantil">
   <h2 class="titulo-seccion titulo-con-linea">Menú Infantil</h2>
   <div class="linea-talavera"></div>
-
   <div class="section-left">
     <ul>
       <li>Tiritas de pollo: $95</li>
@@ -627,13 +203,13 @@ section {
     <img src="tiritas.jpg" alt="Tiritas de Pollo">
     <img src="hamburguesa.jpg" alt="Hamburguesa">
   </div>
-
   <div class="volver-menu">
     <button onclick="scrollToSection('hero')">← Volver al Menú</button>
   </div>
 </div>
 
-  <div class="section" id="bebidas">
+<!-- Bebidas -->
+<div class="section" id="bebidas">
   <h2 class="titulo-seccion titulo-con-linea">Bebidas</h2>
   <div class="linea-talavera"></div>
 
@@ -656,7 +232,7 @@ section {
     <img src="frías.jpg" alt="Bebidas frías">
     <img src="cerveza.jpg" alt="Cerveza">
   </div>
-  
+
   <div class="subcategory">Calientes</div>
   <div class="section-left">
     <ul>
@@ -668,7 +244,7 @@ section {
   <div class="section-right">
     <img src="calientes.jpg" alt="Bebidas calientes">
   </div>
-  
+
   <div class="volver-menu">
     <button onclick="scrollToSection('hero')">← Volver al Menú</button>
   </div>
@@ -699,7 +275,7 @@ section {
   <div class="section-right">
     <img src="helados.jpg" alt="Helados">
   </div>
-  
+
   <div class="subcategory">Pasteles COSTCO $72 c/rebanada</div>
   <div class="postres-grid">
     <div><img src="matilda.jpg" alt="Matilda"><span>Matilda</span></div>
@@ -723,3 +299,17 @@ section {
     <button onclick="scrollToSection('hero')">← Volver al Menú</button>
   </div>
 </div>
+
+<!-- Script -->
+<script>
+function scrollToSection(id){
+  const element = document.getElementById(id);
+  const navHeight = document.querySelector('nav')?.offsetHeight || 0;
+  const yOffset = -navHeight - 10; 
+  const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  window.scrollTo({top: y, behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>

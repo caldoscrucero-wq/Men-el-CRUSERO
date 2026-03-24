@@ -215,6 +215,26 @@ section {
   transform: translateY(-5px);
 }
 
+.volver-menu {
+  width: 100%;
+  text-align: center;
+  margin: 15px 0 0 0;
+}
+
+.volver-menu button {
+  padding: 10px 20px;
+  background-color: #3e2f1c;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.volver-menu button:hover {
+  background-color: #c89b3c;
+  transform: scale(1.05);
+}    
 /* ===== CONTENIDO ===== */
 .section-left ul {
   line-height: 1.8;
@@ -451,7 +471,9 @@ section {
 
 <!-- Pancita -->
 <div class="section" id="pancita">
-  <h2>Pancita</h2>
+  <h2 class="titulo-seccion titulo-con-linea">Pancita</h2>
+  <div class="linea-talavera"></div>
+
   <div class="section-left">
     <ul>
       <li>Grande: $127</li>
@@ -459,10 +481,16 @@ section {
       <li>(Disponibles solo viernes, sábados, domingo, lunes y días festivos)</li>
     </ul>
   </div>
+
   <div class="section-right">
     <img src="pancita.jpg" alt="Pancita">
   </div>
+
   <div class="aviso">🔸 Favor de revisar su cuenta y su cambio. Solicite su ticket.</div>
+
+  <div class="volver-menu">
+    <button onclick="scrollToSection('hero')">← Volver al Menú</button>
+  </div>
 </div>
 
 <!-- Chilaquiles -->

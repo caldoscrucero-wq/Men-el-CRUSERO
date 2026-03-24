@@ -373,21 +373,31 @@ section {
 }
 
 /* ===== POSTRES - GRID ===== */
-.postres-grid {
+#postres .postres-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 10px;
-  justify-items: center;
-  margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* columnas más grandes */
+  gap: 10px; /* menos espacio entre imágenes */
 }
-.postres-grid img {
-  width: 100px;
-  border-radius: 10px;
-}
-.postres-grid span {
-  display: block;
+
+#postres .postres-grid div {
   text-align: center;
+}
+
+#postres .postres-grid img {
+  width: 100%;
+  max-width: 180px; /* ajusta a tu gusto */
+  height: auto;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+#postres .postres-grid img:hover {
+  transform: scale(1.1);
+}
+
+#postres .postres-grid span {
   margin-top: 5px;
+  display: block;
 }
 
 /* ===== AVISO ===== */

@@ -61,85 +61,6 @@ h2 {
   opacity: 0.85;
 }
 
-/* ===== HEADER ===== */
-.video-header {
-  position: relative;
-  height: 220px;
-  overflow: hidden;
-}
-
-.video-header video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.video-header::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.3);
-  top: 0;
-}
-
-/* LOGO */
-.logo-header {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 90px;
-  z-index: 2;
-}
-
-/* ESLOGAN */
-.eslogan-header {
-  position: absolute;
-  bottom: 12px;
-  left: 10px;
-
-  font-size: 1.1em;
-  color: white;
-  z-index: 2;
-
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: 1.2px;
-
-  text-shadow: 0px 2px 6px rgba(0,0,0,0.4);
-}
-
-/* 📱 MOBILE */
-@media (max-width: 768px) {
-  .video-header {
-    height: 180px;
-  }
-
-  .logo-header {
-    width: 70px;
-  }
-
-  .eslogan-header {
-    font-size: 0.95em;
-    bottom: 10px;
-  }
-.video-header {
-  height: 35vh; /* ajusta el alto del video */
-}
-
-.intro-menu {
-  padding: 15px 20px 5px;
-}
-
-.botones-menu {
-  margin-bottom: 10px;
-}
-
-/* empuja el resto hacia abajo */
-section {
-  margin-top: 30px;
-}
 /* ===== BOTONES ===== */
 .buttons-container {
   display: flex;
@@ -188,7 +109,7 @@ section {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   gap: 10px;
   color: white;
@@ -199,16 +120,25 @@ section {
 
 .logo-hero {
   position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 90px;
+  top: 20px;
+  left: 20px;
+  width: 120px;
 }
 
 .overlay p {
+  position: absolute;
+  top: 25px;
+  right: 25px;
   margin: 0;
-  margin-bottom: 5px;
-  font-style: italic;
-  order: 1;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-style: normal; /* 👈 quitamos italic */
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  color: white;
+  text-shadow: 0px 2px 6px rgba(0,0,0,0.6);
 }
 
 .overlay h1 {
@@ -223,7 +153,8 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: center;
+justify-content: flex-end;
+padding-bottom: 60px;
 
   margin-top: 10px;
   margin-bottom: 0px;
@@ -237,6 +168,18 @@ section {
   background: #3e2f1c;
   color: white;
 }
+.intro-menu {
+  padding: 15px 20px 5px;
+}
+
+.botones-menu {
+  margin-bottom: 10px;
+}
+
+section {
+  margin-top: 30px;
+}
+    
 /* ===== SECCIONES (TARJETAS) ===== */
 .section {
   margin: 30px auto;

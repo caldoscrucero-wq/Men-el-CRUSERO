@@ -490,7 +490,6 @@ function scrollToSection(id){
 </body>
 </html>
 
-<!-- Pancita -->
 <div class="section" id="pancita">
   <h2 class="titulo-seccion titulo-con-linea">Pancita</h2>
   <div class="linea-talavera"></div>
@@ -511,6 +510,29 @@ function scrollToSection(id){
     <button onclick="scrollToSection('hero')">← Volver al Menú</button>
   </div>
 </div>
+
+<style>
+/* Ajustes solo para Pancita */
+#pancita {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; /* espacio reducido entre texto e imagen */
+}
+
+#pancita .section-left,
+#pancita .section-right {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+
+#pancita .section-right img {
+  width: 100%;
+  max-width: 400px; /* igual que Caldos */
+  height: auto;
+  display: block;
+}
+</style>
 
 <!-- Chilaquiles -->
 <div class="section" id="chilaquiles">

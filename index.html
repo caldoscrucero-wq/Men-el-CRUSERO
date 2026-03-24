@@ -515,6 +515,28 @@ function scrollToSection(id){
   </div>
 </div>
 
+<style>
+  /* Ajuste exclusivo para la imagen de Pancita */
+  #pancita .section-right img {
+    width: 100%;       /* ocupa todo el contenedor */
+    max-width: 350px;  /* ajusta según tu diseño */
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;    /* centra la imagen */
+    transition: 0.3s;
+  }
+
+  #pancita .section-right img:hover {
+    transform: scale(1.05); /* efecto hover suave */
+  }
+
+  /* Reduce el espacio entre la lista y la imagen */
+  #pancita .section-left,
+  #pancita .section-right {
+    margin-bottom: 0;
+  }
+</style>
+
 <!-- Chilaquiles -->
 <div class="section" id="chilaquiles">
   <h2 class="titulo-seccion titulo-con-linea">Chilaquiles</h2>
